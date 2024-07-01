@@ -1,0 +1,13 @@
+.appContainer {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #121212; /* Updated background color */
+  color: #ffffff; /* Updated text color */
+}
