@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Layout from "./Layout/Layout"
+import "./App.css"
 // import ChallengesPage from "./pages/ChallengesPage"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
@@ -24,8 +25,16 @@ const router = createBrowserRouter([
         element: <>TeamsPage </>,
       },
       {
+        path: "users",
+        element: <>usersPage </>,
+      },
+      {
         path: "decks",
         element: <>DecksPage </>,
+      },
+      {
+        path: "decksCatalog",
+        element: <>decksCatalogPage </>,
       },
       {
         path: "stores",
