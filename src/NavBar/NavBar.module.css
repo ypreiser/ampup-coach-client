@@ -1,0 +1,98 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 30px;
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.backIcon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navHeader h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.navItem:hover, .navItem.active {
+  background-color: #2c2c2c;
+}
+
+.navIcon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.subMenu {
+  list-style-type: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.navFooter {
+  margin-top: auto;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2c2c2c;
+  border-radius: 5px;
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.userEmail {
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.arrow {
+  font-size: 14px;
+}
+.active{
+  color: #FFD05B;
+}
