@@ -1,42 +1,58 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import {  FaQuestionCircle } from 'react-icons/fa';
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { ArrowUp, ArrowDown, ArrowLeft, Decks, AmpUp, Challenges, Teams, Stores, Help } from '../assets/Icons';
 
 import styles from './NavBar.module.css';
-import decks from '../assets/decks.svg'
-import ampup from '../assets/ampup.svg'
-import challenges from '../assets/challenges.svg'
-import teams from '../assets/teams.svg'
-import stores from '../assets/stores.svg'
+
+import UserProfile from './UserProfile/UserProfile';
 
 const NavBar = () => {
   const [openMenu, setOpenMenu] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = (menu: string) => {
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMenuToggle = (menu: string) => {
     setOpenMenu(openMenu === menu ? '' : menu);
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${isOpen ? styles.open : styles.closed}`} onClick={!isOpen ? handleToggle : undefined}>
       <div className={styles.navHeader}>
-        <img src={ampup} alt="" className={styles.backIcon} />
-        <h1>AmpUp</h1>
+        {isOpen && (
+          <>
+            <AmpUp />
+            <h1>AmpUp</h1>
+          </>
+        )}
+        {isOpen && (
+          <div className={styles.toggleButton} onClick={handleToggle}>
+            <ArrowLeft />
+          </div>
+        )}
       </div>
       <ul className={styles.navList}>
         <li>
           <NavLink
-            onClick={() => handleToggle('challenges')}
+            onClick={() => handleMenuToggle('challenges')}
             to="/challenges"
             className={({ isActive }) =>
               `${styles.navItem} ${isActive ? styles.active : ''}`
             }
           >
-            <img src={challenges} alt="" />
-            <span>Challenges</span>
-            <span className={styles.arrow}>
-              {openMenu === 'challenges' ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </span>
+            {({ isActive }) => (
+              <>
+                <Challenges color={isActive ? 'currentColor' : undefined} />
+                {isOpen && <span>Challenges</span>}
+                {isOpen && (
+                  <span className={styles.arrow}>
+                    {openMenu === 'challenges' ? <ArrowUp /> : <ArrowDown />}
+                  </span>
+                )}
+              </>
+            )}
           </NavLink>
         </li>
         <li>
@@ -45,15 +61,21 @@ const NavBar = () => {
             className={({ isActive }) =>
               `${styles.navItem} ${isActive ? styles.active : ''}`
             }
-            onClick={() => handleToggle('teams')}
+            onClick={() => handleMenuToggle('teams')}
           >
-            <img src={teams} alt="" />
-            <span>Teams</span>
-            <span className={styles.arrow}>
-              {openMenu === 'teams' ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </span>
+            {({ isActive }) => (
+              <>
+                <Teams color={isActive ? 'currentColor' : undefined} />
+                {isOpen && <span>Teams</span>}
+                {isOpen && (
+                  <span className={styles.arrow}>
+                    {openMenu === 'teams' ? <ArrowUp /> : <ArrowDown />}
+                  </span>
+                )}
+              </>
+            )}
           </NavLink>
-          {openMenu === 'teams' && (
+          {openMenu === 'teams' && isOpen && (
             <ul className={styles.subMenu}>
               <li>
                 <NavLink
@@ -74,15 +96,21 @@ const NavBar = () => {
             className={({ isActive }) =>
               `${styles.navItem} ${isActive ? styles.active : ''}`
             }
-            onClick={() => handleToggle('decks')}
+            onClick={() => handleMenuToggle('decks')}
           >
-            <img src={decks} alt="" className={styles.navIcon} />
-            <span>Decks</span>
-            <span className={styles.arrow}>
-              {openMenu === 'decks' ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </span>
+            {({ isActive }) => (
+              <>
+                <Decks color={isActive ? 'currentColor' : undefined} />
+                {isOpen && <span>Decks</span>}
+                {isOpen && (
+                  <span className={styles.arrow}>
+                    {openMenu === 'decks' ? <ArrowUp /> : <ArrowDown />}
+                  </span>
+                )}
+              </>
+            )}
           </NavLink>
-          {openMenu === 'decks' && (
+          {openMenu === 'decks' && isOpen && (
             <ul className={styles.subMenu}>
               <li>
                 <NavLink
@@ -99,34 +127,41 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            onClick={() => handleToggle('stores')}
+            onClick={() => handleMenuToggle('stores')}
             to="/stores"
             className={({ isActive }) =>
               `${styles.navItem} ${isActive ? styles.active : ''}`
             }
           >
-            <img src={stores} alt="" />
-            <span>Stores</span>
-            <span className={styles.arrow}>
-              {openMenu === 'stores' ? <IoIosArrowUp /> : <IoIosArrowDown />}
-            </span>
+            {({ isActive }) => (
+              <>
+                <Stores color={isActive ? 'currentColor' : undefined} />
+                {isOpen && <span>Stores</span>}
+                {isOpen && (
+                  <span className={styles.arrow}>
+                    {openMenu === 'stores' ? <ArrowUp /> : <ArrowDown />}
+                  </span>
+                )}
+              </>
+            )}
           </NavLink>
         </li>
       </ul>
-      <div className={styles.navFooter}>
+      <div className={isOpen ? styles.navFooterOpen : styles.navFooterClosed}>
         <NavLink
           to="/help"
           className={({ isActive }) =>
             `${styles.navItem} ${isActive ? styles.active : ''}`
           }
         >
-          <FaQuestionCircle className={styles.navIcon} />
-          Help
+          {({ isActive }) => (
+            <>
+              <Help />
+              {isOpen && <span>Help</span>}
+            </>
+          )}
         </NavLink>
-        <div className={styles.userProfile}>
-          <span>Julia Tsyhanenko</span>
-          <span className={styles.userEmail}>yulia.tsyhanenko@gmail.com</span>
-        </div>
+        <UserProfile isOpen={isOpen} />
       </div>
     </nav>
   );
