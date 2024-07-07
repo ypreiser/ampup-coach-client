@@ -6,6 +6,8 @@
   
   .header {
     display: flex;
+    flex-direction: row;
+    
     justify-content: space-between;
     cursor: pointer;
   }
@@ -28,4 +30,12 @@
     display: flex;
     justify-content: space-between;
   }
-  
+  .icon {
+  height: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray40);
+}

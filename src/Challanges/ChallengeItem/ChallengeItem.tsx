@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ChallengeItem.module.css';
+import { ArrowDownIcon, ArrowUpIcon } from '../../assets/Icons';
 
 interface ChallengeItemProps {
   challenge: any;
@@ -14,15 +15,15 @@ const ChallengeItem: React.FC<ChallengeItemProps> = ({ challenge }) => {
 
   return (
     <div className={styles.challengeItem}>
-      <div className={styles.header} onClick={handleToggle}>
-        <h2>{challenge.title}</h2>
-        <span>{isOpen ? '-' : '+'}</span>
+      <div className={styles.header}>
+        <div className={styles.icon} onClick={handleToggle}>{!isOpen ? <ArrowDownIcon fill="currentcolor" /> : <ArrowUpIcon fill="currentcolor" />
+        }</div>
       </div>
+      <h2>{challenge.title}</h2>
       {isOpen && (
         <div className={styles.details}>
           <p>Participants: {challenge.participants}</p>
           <p>Duration: {challenge.duration}</p>
-          {/* Map the challenges array to display individual challenges */}
           {challenge.challenges.map((c: any) => (
             <div key={c.id} className={styles.challenge}>
               <h3>{c.type}</h3>
