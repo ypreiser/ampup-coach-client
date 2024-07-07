@@ -1,0 +1,42 @@
+/* src/components/MembersList.module.css */
+
+.membersList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .memberItem {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .memberImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .memberDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .memberName {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .memberEmail {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .icon {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+  

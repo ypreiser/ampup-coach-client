@@ -1,24 +1,65 @@
 [
-    {
-      "name": "ADHD TLV",
-      "members": 6,
-      "dateOfCreation": "20/11/2024",
-      "challenges": 15,
-      "link": "www.loremipsumdolorsitamet.com"
-    },
-    {
-      "name": "ADHD TLV",
-      "members": 6,
-      "dateOfCreation": "20/11/2024",
-      "challenges": 15,
-      "link": "www.loremipsumdolorsitamet.com"
-    },
-    {
-      "name": "ADHD TLV",
-      "members": 6,
-      "dateOfCreation": "20/11/2024",
-      "challenges": 15,
-      "link": "www.loremipsumdolorsitamet.com"
-    }
-  ]
-  
+  {
+    "id":"1",
+    "name": "ADHD TLV",
+    "members": [
+      {
+        "name": "Gimmy Jones",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon1.png",
+        "heart": "❤️"
+      },
+      {
+        "name": "Yulia Williams",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon2.png",
+        "heart": "💛"
+      }
+    ],
+    "dateOfCreation": "20/11/2024",
+    "challenges": 15,
+    "link": "www.loremipsumdolorsitamet.com"
+  },
+  {
+    "id":"2",
+    "name": "ADHD TLV",
+    "members": [
+      {
+        "name": "Gimmy Jones",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon1.png",
+        "heart": "❤️"
+      },
+      {
+        "name": "Yulia Williams",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon2.png",
+        "heart": "💛"
+      }
+    ],
+    "dateOfCreation": "20/11/2024",
+    "challenges": 15,
+    "link": "www.loremipsumdolorsitamet.com"
+  },
+  {
+    "id":"3",
+    "name": "ADHD TLV",
+    "members": [
+      {
+        "name": "Gimmy Jones",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon1.png",
+        "heart": "❤️"
+      },
+      {
+        "name": "Yulia Williams",
+        "email": "gimmyjones@gmail.com",
+        "icon": "path/to/icon2.png",
+        "heart": "💛"
+      }
+    ],
+    "dateOfCreation": "20/11/2024",
+    "challenges": 15,
+    "link": "www.loremipsumdolorsitamet.com"
+  }
+]
