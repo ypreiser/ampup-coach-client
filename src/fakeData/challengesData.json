@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "title": "ADHD Parenting March",
+      "participants": 6,
+      "duration": "1 Jun 24 - 14 Jun 24",
+      "challenges": [
+        {
+          "id": 1,
+          "type": "Run 5K",
+          "description": "Run 5 kilometers every day.",
+          "commitments": 21,
+          "support": 12,
+          "content": [
+            {
+              "type": "Intro Video",
+              "status": "Done"
+            },
+            {
+              "type": "Discussion",
+              "status": "Pending"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

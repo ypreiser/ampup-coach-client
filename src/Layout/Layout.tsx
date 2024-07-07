@@ -7,7 +7,6 @@ import style from './style.module.css';
 const Layout = () => {
   return (
     <div className={style.appContainer}>
-      
       <NavBar />
       <main className={style.mainContent}>
         <Outlet />

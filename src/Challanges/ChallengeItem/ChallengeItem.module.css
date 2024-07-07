@@ -1,0 +1,31 @@
+.challengeItem {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--gray20);;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .details {
+    padding: 10px;
+  }
+  
+  .challenge {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  .content {
+    padding: 10px;
+    background-color: var(--gray10);
+  }
+  
+  .contentItem {
+    display: flex;
+    justify-content: space-between;
+  }
+  

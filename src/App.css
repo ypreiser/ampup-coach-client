@@ -1,9 +1,36 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'sora';
+  --yellow: #ffd05b;
+  --main-bg-color: #000;
+  --text-color: #fff;
+  --gray90: rgb(243, 243, 243);
+  --gray80: rgb(216, 216, 216);
+  --gray70: rgb(189, 189, 189);
+  --gray60: rgb(162, 162, 162);
+  --gray50: rgb(130, 130, 130);
+  --gray40: rgb(99, 99, 99);
+  --gray30: rgb(66, 66, 66);
+  --gray20: rgb(33, 33, 33);
+  --gray10: rgb(22, 22, 22);
+
+  [data-theme="light"] {
+    --main-bg-color: #fff;
+    --text-color: #000;
+    
+
+    --gray10: rgb(243, 243, 243);
+    --gray20: rgb(216, 216, 216);
+    --gray30: rgb(189, 189, 189);
+    --gray40: rgb(162, 162, 162);
+    --gray50: rgb(130, 130, 130);
+    --gray60: rgb(99, 99, 99);
+    --gray70: rgb(66, 66, 66);
+    --gray80: rgb(33, 33, 33);
+    --gray90: rgb(22, 22, 22);
+  }
 }

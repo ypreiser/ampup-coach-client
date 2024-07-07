@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Layout from "./Layout/Layout"
 import "./App.css"
-// import ChallengesPage from "./pages/ChallengesPage"
+import ChallengesPage from "./Challanges/ChallengesPage"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
 // import StoresPage from "./pages/StoresPage"
@@ -18,7 +18,8 @@ const router = createBrowserRouter([
       },
       {
         path: "challenges",
-        element: <>ChallengesPage </>,
+        // element: <>ChallengesPage </>,
+        element: <ChallengesPage />,
       },
       {
         path: "teams",
