@@ -3,6 +3,7 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import style from './style.module.css';
+import PopUp from "../components/PopUp/PopUp";
 
 const Layout = () => {
   return (
@@ -11,6 +12,7 @@ const Layout = () => {
       <main className={style.mainContent}>
         <Outlet />
       </main>
+      <PopUp/>
     </div>
   );
 };

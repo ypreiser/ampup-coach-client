@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ChallengeItem.module.css';
-import { ArrowDownIcon, ArrowUpIcon, MailIcon, ParticipantsIcon } from '../../assets/Icons';
+import { ArrowDownIcon, ArrowUpIcon, MailIcon, ParticipantsIcon } from '../../components/Icons/Icons';
 
 interface ChallengeItemProps {
   challenge: any;

@@ -11,7 +11,7 @@ import {
   TeamsIcon,
   HelpIcon,
   StoresIcon // Assuming you have this icon as well
-} from '../assets/Icons';
+} from '../components/Icons/Icons';
 
 import styles from './NavBar.module.css';
 

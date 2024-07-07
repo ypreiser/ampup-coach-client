@@ -35,11 +35,11 @@
 }
 
 .mail {
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: var(--gray50);
   color: var(--yellow);
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  aspect-ratio: 1/1;
   gap: 10px;
   border: 1px var(--text-color) solid;
   display: flex;

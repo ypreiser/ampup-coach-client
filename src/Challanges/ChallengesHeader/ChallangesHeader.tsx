@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ChallangesHeader.module.css';
-import { ArrowDownIcon } from '../../assets/Icons';
+import { ArrowDownIcon, FilterIcon } from '../../components/Icons/Icons';
 
 const ChallengesHeader: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const ChallengesHeader: React.FC = () => {
         {/* todo filter by dropdown */}
 
         <div className={styles.filter}>
-          <span>🔽 filter by: </span>
+          <span><FilterIcon fill='currentcolor'/> filter by: </span>
           <div className={styles.icon}>
             <ArrowDownIcon fill='currentcolor' />
           </div>

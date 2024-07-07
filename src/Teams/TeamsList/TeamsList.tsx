@@ -21,11 +21,7 @@ const TeamsList = () => {
         {teams.map((team, index) => (
           <TeamsItem
             key={index}
-            name={team.name}
-            members={team.members}
-            dateOfCreation={team.dateOfCreation}
-            challenges={team.challenges}
-            link={team.link}
+            team={team}
           />
         ))}
       </tbody>

@@ -33,3 +33,6 @@
   color: var(--red);
   ;
 }
+.members{
+  cursor: pointer;
+}
