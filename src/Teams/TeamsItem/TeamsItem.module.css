@@ -1,0 +1,35 @@
+/* src/components/TeamsItem.module.css */
+
+.teamsItem td {
+  padding: 10px;
+}
+
+.teamsItem td a {
+  text-decoration: underline var(--gray50);
+  text-underline-offset: 4px;
+  color: var(--text-color);
+}
+
+.duplicateButton,
+.deleteButton {
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+
+}
+
+.duplicateButton {
+  color: var(--yellow);
+}
+
+.deleteButton {
+  height: 30px;
+  aspect-ratio: 1/1;
+  background-color: var(--gray40);
+  border-radius: 8px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  ;
+}
