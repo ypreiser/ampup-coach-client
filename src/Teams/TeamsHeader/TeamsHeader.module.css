@@ -1,0 +1,45 @@
+/* src/components/TeamsHeader.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    background-color: var(--gray20);
+}
+
+.searchCreateContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.searchBar {
+    background-color: var(--gray30);
+    padding: 10px;
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 16px;
+    color: var(--gray50);
+}
+
+.searchBar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: inherit;
+}
+
+.createButton {
+    background-color: var(--gray40);
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    height: 45px;
+}

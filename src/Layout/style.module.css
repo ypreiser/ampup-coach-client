@@ -1,3 +1,5 @@
+/* src\Layout\style.module.css */
+
 .appContainer {
   display: flex;
   height: 100vh;
@@ -6,8 +8,7 @@
 
 .mainContent {
   flex-grow: 1;
-  padding: 20px;
   overflow-y: auto;
-  background-color: #121212; /* Updated background color */
-  color: #ffffff; /* Updated text color */
+  background-color:black; 
+  color: #ffffff; 
 }

@@ -1,0 +1,118 @@
+.navbar {
+  width: 120px;
+  transition: width 0.3s ease;
+  position: relative;
+  background-color: var(--gray10);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+.navbar.open {
+  width: 22.5%;
+}
+
+.navbar.closed {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.navHeader h1 {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
+
+}
+
+.navbar.open .navHeader h1 {
+  opacity: 1;
+}
+
+.headAndList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subMenu {
+  list-style-type: none;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--gray70);
+  transition: padding 0.3s ease;
+  /* Smooth transition for padding */
+}
+
+.navItem span {
+  margin-left: 10px;
+  opacity: 0;
+  transition: all 0.3s ease 0.3s;
+  /* Delay to match navbar width transition */
+}
+
+.navbar.open .navItem span {
+  opacity: 1;
+}
+
+.navFooterOpen {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 0.3s ease;
+  /* Smooth transition */
+}
+
+.navFooterClosed {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.navFooterClosed .navItem {
+  justify-content: center;
+}
+
+.arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  /* Smooth transition for arrows */
+}
+
+.toggleButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* Smooth transition for the button */
+}
+
+.active {
+  color: var(--yellow);
+}
