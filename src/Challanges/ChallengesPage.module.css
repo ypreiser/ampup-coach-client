@@ -1,6 +1,7 @@
 .challenges {
     padding: 20px;
     margin: 30px;
-    background-color: var(--gray10);
+    background-color: var(--gray20);
+    border-radius: 20px;
   }
   

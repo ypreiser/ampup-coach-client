@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ChallengeItem.module.css';
-import { ArrowDownIcon, ArrowUpIcon } from '../../assets/Icons';
+import { ArrowDownIcon, ArrowUpIcon, MailIcon, ParticipantsIcon } from '../../assets/Icons';
 
 interface ChallengeItemProps {
   challenge: any;
@@ -14,16 +14,29 @@ const ChallengeItem: React.FC<ChallengeItemProps> = ({ challenge }) => {
   };
 
   return (
+
     <div className={styles.challengeItem}>
       <div className={styles.header}>
-        <div className={styles.icon} onClick={handleToggle}>{!isOpen ? <ArrowDownIcon fill="currentcolor" /> : <ArrowUpIcon fill="currentcolor" />
-        }</div>
+        <div className={styles.left}>
+          <div className={styles.icon} onClick={handleToggle}>{!isOpen ? <ArrowDownIcon fill="currentcolor" /> : <ArrowUpIcon fill="currentcolor" />
+          }</div>
+          <h2>{challenge.title}</h2>
+          <div>
+            <ParticipantsIcon fill='currentcolor' />
+            <span className={styles.participants}>
+              {`${challenge.participants} Participants`}
+            </span>
+          </div>
+        </div>
+        <div className={styles.right}>
+          <div className={`${styles.status} ${styles[challenge.status]}`}></div>
+          <div className={styles[challenge.status]}>{challenge.duration}</div>
+          <button className={styles.mail}><MailIcon fill='currentcolor' /></button>
+        </div>
       </div>
-      <h2>{challenge.title}</h2>
+
       {isOpen && (
         <div className={styles.details}>
-          <p>Participants: {challenge.participants}</p>
-          <p>Duration: {challenge.duration}</p>
           {challenge.challenges.map((c: any) => (
             <div key={c.id} className={styles.challenge}>
               <h3>{c.type}</h3>

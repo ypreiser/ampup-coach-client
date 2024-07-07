@@ -2,17 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: var(--gray10);
+  padding: 20px 10px 10px 10px;
+  background-color: var(--gray20);
+}
+
+.filterAndCreate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .createButton {
   background-color: var(--gray40);
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 10px 20px;
   color: var(--text-color);
   cursor: pointer;
+  height: 45px;
 }
 
 .filter {
@@ -23,7 +32,7 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 16px;
   color: var(--gray50);
 }
 
@@ -35,4 +44,5 @@
   justify-content: center;
   align-items: center;
   background-color: var(--gray40);
+  color: var(--text-color);
 }

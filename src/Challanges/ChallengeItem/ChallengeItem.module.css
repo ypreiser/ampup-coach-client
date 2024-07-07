@@ -1,36 +1,76 @@
 .challengeItem {
-    margin: 10px;
-    padding: 10px;
-    background-color: var(--gray20);;
-  }
-  
-  .header {
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--gray30);
+  border-radius: 16px;
+}
+
+.participants {
+  color: var(--gray50);
+  padding: 1rem;
+}
+
+.header {
+  align-items: center;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  && .right {
+
     display: flex;
-    flex-direction: row;
-    
-    justify-content: space-between;
-    cursor: pointer;
+    gap: 15px;
+    align-items: center;
   }
-  
-  .details {
-    padding: 10px;
-  }
-  
-  .challenge {
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-  
-  .content {
-    padding: 10px;
-    background-color: var(--gray10);
-  }
-  
-  .contentItem {
+
+  && .left {
     display: flex;
-    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+
   }
-  .icon {
+}
+
+.mail {
+  border-radius: 12px;
+  background-color: var(--gray50);
+  color: var(--yellow);
+  width: 45px;
+  height: 45px;
+  gap: 10px;
+  border: 1px var(--text-color) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+
+}
+
+.details {
+  padding: 10px;
+}
+
+.challenge {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.content {
+  padding: 10px;
+  background-color: var(--gray10);
+}
+
+.contentItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
   height: 30px;
   aspect-ratio: 1/1;
   border-radius: 100%;
@@ -38,4 +78,30 @@
   justify-content: center;
   align-items: center;
   background-color: var(--gray40);
+  cursor: pointer;
+}
+
+.status {
+  height: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+
+
+  &&.Active {
+    background-color: var(--green);
+
+  }
+
+  &&.Pending {
+    background-color: var(--yellow);
+  }
+
+  &&.Done {
+    background-color: var(--gray50);
+  }
+}
+
+.Done {
+  color: var(--gray50);
+
 }
