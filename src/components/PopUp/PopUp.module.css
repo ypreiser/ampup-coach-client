@@ -39,21 +39,56 @@
 }
 
 .popup {
-    /* max-width: 700px; */
-    /* width: 800px;
-    height: 400px; */
+    width: fit-content;
+    min-width: 37%;
+    max-width: 70%;
+    max-height: 90%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
     align-self: center;
     position: relative;
     animation: slideIn 0.3s ease-in-out;
-    padding: 15px;
+    gap: 25px;
+    padding: 30px, 30px, 25px, 30px;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    margin: 10px;
 
-    /* margin: 10px; */
+}
+
+.main {
+    display: flex;
+    
+    flex-direction: column;
+    max-height: 90%;
+    overflow-y: auto;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--gray20);
+    border-radius: 20px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray50);
 }
 
 .top {
@@ -63,11 +98,21 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 20px 10px 20px;
+    padding: 30px 30px 10px 20px;
     width: 100%;
+    gap: 25px;
 }
 
 .close {
-    width: 24px;
+    height: 38px;
+    width: 38px;
+    border: 1px var(--text-color) solid;
+    color: var(--text-color);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray30);
+    border-radius: 8px;
+
 }

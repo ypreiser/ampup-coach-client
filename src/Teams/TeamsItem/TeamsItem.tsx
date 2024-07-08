@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import styles from './TeamsItem.module.css';
 import { DuplicateIcon, ParticipantsIcon, TrashIcon } from '../../components/Icons/Icons'
 import DataContext from '../../context/DataContext';
+import MembersList from '../../components/MemberList/MemberList';
 
 interface TeamItemProps {
   team: Team;
@@ -24,24 +25,32 @@ const TeamsItem: React.FC<TeamItemProps> = ({team}) => {
   const handleMembersClick = () => {
     console.log("handleMembersClick");
     
+  //   setPopUp({
+  //     title: 'Members',
+  //     component: (
+  //       <div className={styles.membersList}>
+  //         {team.members.map((member, index) => (
+  //           <div key={index} className={styles.member}>
+  //             <img src={member.icon} alt={member.name} className={styles.memberIcon} />
+  //             <div>
+  //               <h4>{member.name}</h4>
+  //               <p>{member.email}</p>
+  //             </div>
+  //             <span>{member.heart}</span>
+  //           </div>
+  //         ))}
+  //       </div>
+  //     ),
+  //   });
+  // };
     setPopUp({
       title: 'Members',
       component: (
-        <div className={styles.membersList}>
-          {team.members.map((member, index) => (
-            <div key={index} className={styles.member}>
-              <img src={member.icon} alt={member.name} className={styles.memberIcon} />
-              <div>
-                <h4>{member.name}</h4>
-                <p>{member.email}</p>
-              </div>
-              <span>{member.heart}</span>
-            </div>
-          ))}
-        </div>
+        <MembersList members={members} />
       ),
     });
   };
+
 
   return (
     <tr className={styles.teamsItem}>

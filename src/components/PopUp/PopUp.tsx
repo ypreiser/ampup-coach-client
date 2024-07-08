@@ -1,4 +1,4 @@
-import { useContext, ReactNode, useEffect } from 'react';
+import { useContext, ReactNode } from 'react';
 import styles from './PopUp.module.css';
 import { XIcon } from '../Icons/Icons';
 import DataContext from '../../context/DataContext';
@@ -14,10 +14,6 @@ export default function PopUp() {
     PopUp: PopUpContent | null;
   };
 
-  useEffect(() => {
-    console.log('popup');
-
-  }, [])
 
 
 
@@ -36,10 +32,12 @@ export default function PopUp() {
                 <h1>{PopUp.title}</h1>
               </div>
               <div className={styles.close} onClick={() => setPopUp(null)}>
-                <XIcon fill="correntcolor" />
+                <XIcon fill="white" />
               </div>
             </div>
-            {PopUp.component}
+            <div className={styles.main}>
+              {PopUp.component}
+            </div>
           </div>
         </div>
       )}

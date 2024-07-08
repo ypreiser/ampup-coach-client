@@ -1,0 +1,66 @@
+/* src/components/NewTeam.module.css */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  h2, h3 {
+    color: white;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .joinLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .joinLink span {
+    color: white;
+  }
+  
+  .member {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .addMember,
+  .createTeam {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: yellow;
+  }
+  
+  .addMember {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .createTeam {
+    background-color: white;
+    color: black;
+  }
+  
+  .required {
+    color: red;
+  }
+  
