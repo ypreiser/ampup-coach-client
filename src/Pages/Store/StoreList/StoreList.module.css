@@ -1,0 +1,33 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--gray30);
+    border-radius: 16px;
+    color: var(--text-color);
+    border-spacing: 0;
+    overflow: hidden;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .thead {
+    color: var(--gray80);
+    background-color: var(--gray40);
+    border-radius: 16px;
+    height: 45px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14.56px;
+    letter-spacing: -1px;
+    text-align: left;
+  }
+  
+  .table td {
+    border-bottom: 1px solid var(--gray50);
+    height: 65px;
+  }
+  

@@ -4,6 +4,7 @@ import "./App.css"
 import ChallengesPage from "./Pages/Challanges/ChallengesPage"
 import TeamsPage from "./Pages/Teams/TeamsPage"
 import UsersPage from "./Pages/Users/UserPage"
+import StorePage from "./Pages/Store/StorePage"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
 // import StoresPage from "./pages/StoresPage"
@@ -20,7 +21,6 @@ const router = createBrowserRouter([
       },
       {
         path: "challenges",
-        // element: <>ChallengesPage </>,
         element: <ChallengesPage />,
       },
       {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "stores",
-        element: <>StoresPage </>,
+        element: <StorePage />,
       },
       {
         path: "help",

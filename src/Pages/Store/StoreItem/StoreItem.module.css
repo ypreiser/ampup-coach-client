@@ -1,0 +1,25 @@
+.storeItem {
+    height: 65px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.duplicateButton {
+    color: var(--yellow);
+    background-color: inherit;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: var(--red);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
