@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import styles from './NewTeam.module.css';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const NewTeam = () => {
     const [teamName, setTeamName] = useState('');
+    const [landingPageLink, setLandingPageLink] = useState('');
     const [landingPageTitle, setLandingPageTitle] = useState('');
     const [members, setMembers] = useState([{ name: '', email: '', phone: '' }]);
 
@@ -24,43 +27,50 @@ const NewTeam = () => {
 
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
-            <label>
+            <label >
                 Team Name
-                <input
+                <Input
                     type="text"
                     value={teamName}
                     onChange={(e) => setTeamName(e.target.value)}
                     required
+                    placeholder="Team Name"
+                    label=""
                 />
             </label>
             <label>
                 Join Link
-                {/* todo: check link availability */}
                 <div className={styles.joinLink}>
                     <span>www.AmpUp.pro/join/</span>
-                    <input
+                    <Input
                         type="text"
-                        value={landingPageTitle}
-                        onChange={(e) => setLandingPageTitle(e.target.value)}
+                        value={landingPageLink}
+                        onChange={(e) => setLandingPageLink(e.target.value)}
                         required
                     />
                 </div>
             </label>
+            <Input
+                type="text"
+                value={landingPageTitle}
+                onChange={(e) => setLandingPageTitle(e.target.value)}
+                required
+                placeholder="Landing Page Title"
+            />
             <h3>Add Member</h3>
-            {/* todo: upload from excel */}
             {members.map((member, index) => (
                 <div key={index} className={styles.member}>
                     <label>
                         Name
-                        <input
+                        <Input
                             type="text"
                             value={member.name}
                             onChange={(e) => handleMemberChange(index, 'name', e.target.value)}
                         />
                     </label>
                     <label>
-                        Email <span className={styles.required}>*</span>
-                        <input
+                        Email
+                        <Input
                             type="email"
                             value={member.email}
                             onChange={(e) => handleMemberChange(index, 'email', e.target.value)}
@@ -69,23 +79,22 @@ const NewTeam = () => {
                     </label>
                     <label>
                         Phone
-                        <input
+                        <Input
                             type="tel"
                             value={member.phone}
                             onChange={(e) => handleMemberChange(index, 'phone', e.target.value)}
                         />
                     </label>
-                    <hr className={styles.hr}/>
+                    <hr className={styles.hr} />
                 </div>
             ))}
-            <div className={styles.buttons}>    
-                <button type="button" className={styles.addMember} onClick={handleAddMember}>
-                    <span>+</span>
-                    Add Another User
-                </button>
-                <button type="submit" className={styles.createButton}>
+            <div className={styles.buttons}>
+                <Button type="button" className={styles.addMember} onClick={handleAddMember}>
+                    <span>+</span> Add Another User
+                </Button>
+                <Button type="submit" className={styles.createButton}>
                     Create Team
-                </button>
+                </Button>
             </div>
         </form>
     );

@@ -1,0 +1,18 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .requiredLabel {
+    color: var(--red);
+  }
+  
+  .input {
+    all: unset;
+    background-color: var(--gray30);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 12px;
+  }
+  

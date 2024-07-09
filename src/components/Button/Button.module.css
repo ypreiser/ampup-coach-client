@@ -1,0 +1,17 @@
+.button {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  
+  .button.create {
+    background-color: var(--gray40);
+    border-radius: 16px;
+    padding: 10px 20px;
+    height: 45px;
+    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
+  }
+  

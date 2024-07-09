@@ -3,7 +3,7 @@
 import styles from './TeamsHeader.module.css';
 import { ReactNode, useContext } from 'react';
 import DataContext from '../../context/DataContext';
-import NewTeam from '../../components/NewTeam/NewTeam';
+import NewTeam from '../NewTeam/NewTeam';
 import { SearchIcon } from '../../components/Icons/Icons';
 
 const TeamsHeader = () => {

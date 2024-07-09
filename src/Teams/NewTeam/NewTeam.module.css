@@ -44,16 +44,6 @@ input[type="tel"] {
     gap: 10px;
 }
 
-.addMember,
-.createTeam {
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: var(--yellow);
-
-}
 .buttons {
   display: flex;
   flex-direction: row;
