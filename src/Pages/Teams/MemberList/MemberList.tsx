@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './MemberList.module.css'
-import { HeartIcon } from '../../components/Icons/Icons';
+import { HeartIcon } from '../../../components/Icons/Icons';
 
 interface Member {
   name: string;

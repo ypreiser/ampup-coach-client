@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ChallangesHeader.module.css';
-import { ArrowDownIcon, FilterIcon } from '../../components/Icons/Icons';
+import { ArrowDownIcon, FilterIcon } from '../../../components/Icons/Icons';
 
 const ChallengesHeader: React.FC = () => {
   return (

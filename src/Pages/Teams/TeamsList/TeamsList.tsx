@@ -2,7 +2,7 @@
 
 import styles from './TeamsList.module.css';
 import TeamsItem from '../TeamsItem/TeamsItem';
-import  teams  from '../../fakeData/TeamsData.json';
+import  teams  from '../../../fakeData/TeamsData.json';
 
 const TeamsList = () => {
   return (

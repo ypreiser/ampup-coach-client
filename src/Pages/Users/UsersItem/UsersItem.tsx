@@ -2,7 +2,7 @@
 
 import styles from './UsersItem.module.css';
 import { HeartIcon, PointsIcon } from '../../../components/Icons/Icons'
-import ChallengeList from '../../../Challanges/ChallengeList/ChallengeList';
+import ChallengeList from '../../Challanges/ChallengeList/ChallengeList';
 import { ReactNode, useContext } from 'react';
 import DataContext from '../../../context/DataContext';
 

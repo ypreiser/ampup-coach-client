@@ -2,8 +2,8 @@
 
 import React, { useContext } from 'react';
 import styles from './TeamsItem.module.css';
-import { DuplicateIcon, ParticipantsIcon, TrashIcon } from '../../components/Icons/Icons'
-import DataContext from '../../context/DataContext';
+import { DuplicateIcon, ParticipantsIcon, TrashIcon } from '../../../components/Icons/Icons'
+import DataContext from '../../../context/DataContext';
 import MembersList from '../MemberList/MemberList';
 
 interface TeamItemProps {

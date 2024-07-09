@@ -2,9 +2,9 @@
 
 import styles from './TeamsHeader.module.css';
 import { ReactNode, useContext } from 'react';
-import DataContext from '../../context/DataContext';
+import DataContext from '../../../context/DataContext';
 import NewTeam from '../NewTeam/NewTeam';
-import { SearchIcon } from '../../components/Icons/Icons';
+import { SearchIcon } from '../../../components/Icons/Icons';
 
 const TeamsHeader = () => {
   const { setPopUp } = useContext(DataContext) as {
