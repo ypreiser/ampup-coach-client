@@ -3,6 +3,7 @@ import Layout from "./Layout/Layout"
 import "./App.css"
 import ChallengesPage from "./Challanges/ChallengesPage"
 import TeamsPage from "./Teams/TeamsPage"
+import UsersPage from "./Pages/Users/UserPage"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
 // import StoresPage from "./pages/StoresPage"
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "users",
-        element: <>usersPage </>,
+        element: <UsersPage />,
       },
       {
         path: "decks",

@@ -1,0 +1,61 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  h3 {
+    color: var(--text-color);
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    all: unset;
+    background-color: var(--gray30);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 12px;
+  }
+  
+  .user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .addUser {
+    color: var(--yellow);
+    background-color: var(--main-bg-color);
+  }
+  
+  .submitButton {
+    background-color: var(--gray40);
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    height: 45px;
+    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
+  }
+  
+  .hr {
+    color: var(--gray30);
+    width: 90%;
+    height: 1px;
+    margin: 15px;
+  }
+  

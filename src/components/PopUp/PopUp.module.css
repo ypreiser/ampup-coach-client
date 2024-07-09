@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 .container {
     position: fixed;
@@ -14,16 +13,6 @@
     align-items: center;
     border-radius: 8px;
 }
-
-
-
-/* 
-.allpopup{
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid firebrick;  
-     z-index: 100; 
-}  */
 
 @keyframes slideIn {
     0% {
@@ -41,7 +30,7 @@
 .popup {
     width: fit-content;
     min-width: 37%;
-    max-width: 70%;
+    max-width: 60%;
     max-height: 90%;
     display: flex;
     flex-direction: column;
@@ -61,39 +50,37 @@
 
 .main {
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     max-height: 90%;
     overflow-y: auto;
+    max-width: 90%;
+    padding-right: 40px;
 
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: var(--gray20);
     border-radius: 20px;
 
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--text-color);
     border-radius: 20px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gray50);
 }
 
 .top {
 
-    /* border-bottom: 1px solid #E8E8E8; */
     justify-content: space-between;
     display: flex;
     flex-direction: row;
