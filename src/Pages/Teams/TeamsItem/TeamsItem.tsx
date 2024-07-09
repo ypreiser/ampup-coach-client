@@ -25,24 +25,6 @@ const TeamsItem: React.FC<TeamItemProps> = ({team}) => {
   const handleMembersClick = () => {
     console.log("handleMembersClick");
     
-  //   setPopUp({
-  //     title: 'Members',
-  //     component: (
-  //       <div className={styles.membersList}>
-  //         {team.members.map((member, index) => (
-  //           <div key={index} className={styles.member}>
-  //             <img src={member.icon} alt={member.name} className={styles.memberIcon} />
-  //             <div>
-  //               <h4>{member.name}</h4>
-  //               <p>{member.email}</p>
-  //             </div>
-  //             <span>{member.heart}</span>
-  //           </div>
-  //         ))}
-  //       </div>
-  //     ),
-  //   });
-  // };
     setPopUp({
       title: 'Members',
       component: (

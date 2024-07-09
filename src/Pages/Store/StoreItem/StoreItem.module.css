@@ -5,21 +5,31 @@
 .actions {
     display: flex;
     gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.duplicateButton,
+.deleteButton {
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+
 }
 
 .duplicateButton {
-    color: var(--yellow);
-    background-color: inherit;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-    cursor: pointer;
+  color: var(--yellow);
 }
 
 .deleteButton {
-    background-color: var(--red);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-    cursor: pointer;
+  height: 30px;
+  aspect-ratio: 1/1;
+  background-color: var(--gray40);
+  border-radius: 8px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  ;
 }
