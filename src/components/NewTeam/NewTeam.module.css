@@ -4,63 +4,77 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  h2, h3 {
-    color: white;
-  }
-  
-  label {
+}
+
+h2,
+h3 {
+    color: var(--text-color);
+}
+
+label {
     display: flex;
     flex-direction: column;
-    color: white;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"] {
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    all: unset;
+    background-color: var(--gray30);
     padding: 10px;
     margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .joinLink {
+    border-radius: 12px;
+
+}
+
+.joinLink {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  .joinLink span {
-    color: white;
-  }
-  
-  .member {
+}
+
+.joinLink span {
+    color: var(--text-color);
+}
+
+.member {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  .addMember,
-  .createTeam {
+}
+
+.addMember,
+.createTeam {
     padding: 10px;
     border: none;
+    outline: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: yellow;
-  }
-  
-  .addMember {
-    background-color: yellow;
-    color: black;
-  }
-  
-  .createTeam {
-    background-color: white;
-    color: black;
-  }
-  
-  .required {
-    color: red;
-  }
-  
+    background-color: var(--yellow);
+
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.addMember {
+    color: var(--yellow);
+    background-color: var(--main-bg-color);
+}
+
+.createButton {
+    background-color: var(--gray40);
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    height: 45px;
+}
+
+
+.required {
+    color: var(--red);
+}

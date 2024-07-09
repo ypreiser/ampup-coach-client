@@ -17,14 +17,20 @@
 
 .searchBar {
     background-color: var(--gray30);
-    padding: 10px;
-    width: 230px;
-    display: flex;
+    padding: 20px;
     justify-content: space-between;
+    display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 16px;
     color: var(--gray50);
+    height: 45px;
+}
+
+.searchIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchBar input {
@@ -42,4 +48,5 @@
     color: var(--text-color);
     cursor: pointer;
     height: 45px;
+    border: var(--text-color) 1px solid;
 }

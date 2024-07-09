@@ -1,10 +1,10 @@
 // src/Teams/TeamsHeader/TeamsHeader.tsx
 
 import styles from './TeamsHeader.module.css';
-import { FaSearch, FaPlus } from 'react-icons/fa';
 import { ReactNode, useContext } from 'react';
 import DataContext from '../../context/DataContext';
 import NewTeam from '../../components/NewTeam/NewTeam';
+import { SearchIcon } from '../../components/Icons/Icons';
 
 const TeamsHeader = () => {
   const { setPopUp } = useContext(DataContext) as {
@@ -12,7 +12,7 @@ const TeamsHeader = () => {
   };
 
   const handleCreateTeamClick = () => {
-    setPopUp({ title: 'Create New Team', component: <NewTeam /> });
+    setPopUp({ title: 'New Team', component: <NewTeam /> });
   };
 
   return (
@@ -21,10 +21,12 @@ const TeamsHeader = () => {
       <div className={styles.searchCreateContainer}>
         <div className={styles.searchBar}>
           <input type="text" placeholder="Search" />
-          <FaSearch />
+          <div className={styles.searchIcon}>
+          <SearchIcon fill='currentcolor' />
+          </div>
         </div>
         <button className={styles.createButton} onClick={handleCreateTeamClick}>
-          <FaPlus /> Create Team
+          Create Team
         </button>
       </div>
     </div>

@@ -153,11 +153,16 @@ export const FilterIcon: React.FC<IconProps> = ({ fill = "currentcolor" }) => {
 }
 export const XIcon: React.FC<IconProps> = ({ fill = "currentcolor" }) => {
     return (
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className={style.icon}>
             <path d="M1.01562 12.6264L12.9786 1.36719M1.01562 1.36719L12.9786 12.6264" stroke={fill} strokeWidth="1.05556" strokeLinecap="round" />
         </svg>
 
     )
 }
+export const SearchIcon: React.FC<IconProps> = ({ fill = "currentcolor" }) => { return ( 
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" className={style.icon}>
+<path d="M16.3752 16.3752L12.5751 12.5751M12.5751 12.5751C13.2251 11.925 13.7407 11.1533 14.0925 10.304C14.4443 9.45473 14.6254 8.54446 14.6254 7.62518C14.6254 6.7059 14.4443 5.79563 14.0925 4.94633C13.7407 4.09703 13.2251 3.32533 12.5751 2.67531C11.925 2.02528 11.1533 1.50965 10.304 1.15786C9.45473 0.806065 8.54446 0.625 7.62518 0.625C6.7059 0.625 5.79563 0.806065 4.94633 1.15786C4.09703 1.50965 3.32533 2.02528 2.67531 2.67531C1.36252 3.98809 0.625 5.76862 0.625 7.62518C0.625 9.48174 1.36252 11.2623 2.67531 12.5751C3.98809 13.8878 5.76862 14.6254 7.62518 14.6254C9.48174 14.6254 11.2623 13.8878 12.5751 12.5751Z" stroke={fill} strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+) }
 // export const Icon: React.FC<IconProps> = ({ fill = "currentcolor" }) => { return ( ) }
 
