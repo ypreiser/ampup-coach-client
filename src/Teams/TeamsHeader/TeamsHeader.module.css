@@ -48,5 +48,6 @@
     color: var(--text-color);
     cursor: pointer;
     height: 45px;
-    border: var(--text-color) 1px solid;
+    /* border: var(--text-color) 1px solid; */
+    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255,255,255,1);
 }

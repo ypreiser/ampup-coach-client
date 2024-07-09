@@ -35,6 +35,7 @@ const NewTeam = () => {
             </label>
             <label>
                 Join Link
+                {/* todo: check link availability */}
                 <div className={styles.joinLink}>
                     <span>www.AmpUp.pro/join/</span>
                     <input
@@ -46,6 +47,7 @@ const NewTeam = () => {
                 </div>
             </label>
             <h3>Add Member</h3>
+            {/* todo: upload from excel */}
             {members.map((member, index) => (
                 <div key={index} className={styles.member}>
                     <label>
@@ -73,6 +75,7 @@ const NewTeam = () => {
                             onChange={(e) => handleMemberChange(index, 'phone', e.target.value)}
                         />
                     </label>
+                    <hr className={styles.hr}/>
                 </div>
             ))}
             <div className={styles.buttons}>    

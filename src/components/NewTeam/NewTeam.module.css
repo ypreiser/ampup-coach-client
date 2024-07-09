@@ -72,9 +72,17 @@ input[type="tel"] {
     color: var(--text-color);
     cursor: pointer;
     height: 45px;
+    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255,255,255,1);
 }
-
 
 .required {
     color: var(--red);
+}
+.hr{
+
+    color: var(--gray30);
+    width: 90%;
+    height: 1px;
+    margin: 15px;
+
 }
