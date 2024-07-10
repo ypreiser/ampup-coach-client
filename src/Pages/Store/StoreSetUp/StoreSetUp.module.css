@@ -1,8 +1,15 @@
-/* src/Pages/Store/StoreSetUp.module.css */
-
 .container {
-    padding: 20px;
-  }
+  padding: 20px;
+  margin: 30px;
+  background-color: var(--gray20);
+  border-radius: 20px;  }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
   
   .saveButton {
     float: right;
@@ -12,6 +19,7 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 30px;
   }
   
   .table {
@@ -61,10 +69,10 @@
   }
   
   .newCardButton {
+    background-color: inherit;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: var(--yellow);
-    color: var(--text-color);
+    color: var(--yellow);
     border: none;
     border-radius: 8px;
     cursor: pointer;
