@@ -1,3 +1,10 @@
+.storeItemLink {
+  text-decoration: none;
+  color: inherit;
+  display: contents; /* Ensures the link behaves like a table row */
+  cursor: pointer;
+}
+
 .storeItem {
     height: 65px;
 }

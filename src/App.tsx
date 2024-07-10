@@ -5,6 +5,7 @@ import ChallengesPage from "./Pages/Challanges/ChallengesPage"
 import TeamsPage from "./Pages/Teams/TeamsPage"
 import UsersPage from "./Pages/Users/UserPage"
 import StorePage from "./Pages/Store/StorePage"
+import StoreSetUp from "./Pages/Store/StoreSetUp/StoreSetUp"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
 // import StoresPage from "./pages/StoresPage"
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "stores",
         element: <StorePage />,
+      },
+      {
+        path: "stores/:storeId",
+        element: <StoreSetUp/>, 
       },
       {
         path: "help",

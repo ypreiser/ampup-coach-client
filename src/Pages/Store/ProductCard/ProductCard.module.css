@@ -1,0 +1,19 @@
+/* src/components/ProductCard/ProductCard.module.css */
+
+.productCard {
+    border-bottom: 1px solid var(--gray50);
+    height: 65px;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cardImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  
