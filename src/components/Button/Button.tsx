@@ -5,12 +5,12 @@ interface ButtonProps {
   onClick?: () => void;
   type: 'button' | 'submit' | 'reset';
   children: React.ReactNode;
-  className?: string;
+  className?: 'create';
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, type, children, className }) => {
   return (
-    <button onClick={onClick} type={type} className={`${styles.button} ${className}`}>
+    <button onClick={onClick} type={type} className={className ? `${styles.button} ${styles[className]}` : `${styles.button}`}>
       {children}
     </button>
   );
