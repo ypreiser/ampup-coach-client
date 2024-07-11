@@ -1,17 +1,11 @@
-import React, { ReactNode, useContext, useState } from 'react';
+import { useState } from 'react';
 import styles from './NewProduct.module.css';
 import Button from '../../../components/Button/Button';
-import DataContext from '../../../context/DataContext';
-
+import { usePopupStore } from '../../../store';
 const NewProduct: React.FC = () => {
-  interface PopUpContent {
-    title: string;
-    component: ReactNode;
-  }
 
-  const { setPopUp } = useContext(DataContext) as {
-    setPopUp: (content: PopUpContent | null) => void;
-  };
+
+  const { setPopUp } = usePopupStore()
 
   const [product, setProduct] = useState({
     name: '',

@@ -1,17 +1,13 @@
 // src/Teams/TeamsHeader/TeamsHeader.tsx
 
 import styles from './UsersHeader.module.css';
-import { ReactNode, useContext } from 'react';
-import DataContext from '../../../context/DataContext';
+import { usePopupStore } from '../../../store';
 import Button from '../../../components/Button/Button';
 import { SearchIcon } from '../../../components/Icons/Icons';
 import AddUser from '../AddUser/AddUser';
 
 const UsersHeader = () => {
-  const { setPopUp } = useContext(DataContext) as {
-    setPopUp: (content: { title: string, component: ReactNode } | null) => void;
-  };
-
+  const { setPopUp } = usePopupStore();
   const handleAddUser = () => {
     console.log('add user');
     

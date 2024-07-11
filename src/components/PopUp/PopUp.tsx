@@ -1,21 +1,11 @@
-import { useContext, ReactNode } from 'react';
 import styles from './PopUp.module.css';
 import { XIcon } from '../Icons/Icons';
-import DataContext from '../../context/DataContext';
+import { usePopupStore } from '../../store'
 
-interface PopUpContent {
-  title: string;
-  component: ReactNode;
-}
+
 
 export default function PopUp() {
-  const { setPopUp, PopUp } = useContext(DataContext) as {
-    setPopUp: (content: PopUpContent | null) => void;
-    PopUp: PopUpContent | null;
-  };
-
-
-
+  const { PopUp, setPopUp } = usePopupStore();
 
   return (
     <div className={styles.allpopup}>

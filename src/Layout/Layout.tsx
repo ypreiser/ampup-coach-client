@@ -4,11 +4,9 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import style from './style.module.css';
 import PopUp from "../components/PopUp/PopUp";
-import { ManageContext } from "../context/ManageContext";
 
 const Layout = () => {
   return (
-    <ManageContext>
 
       <div className={style.appContainer}>
         <NavBar />
@@ -17,7 +15,6 @@ const Layout = () => {
         </main>
         <PopUp />
       </div>
-    </ManageContext>
   );
 };
 

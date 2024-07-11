@@ -3,9 +3,7 @@
 import styles from './UsersItem.module.css';
 import { HeartIcon, PointsIcon } from '../../../components/Icons/Icons'
 import ChallengeList from '../../Challanges/ChallengeList/ChallengeList';
-import { ReactNode, useContext } from 'react';
-import DataContext from '../../../context/DataContext';
-
+import { usePopupStore } from '../../../store';
 interface UserItemProps {
   user: User;
 }
@@ -18,9 +16,7 @@ interface User {
 
 const UsersItem: React.FC<UserItemProps> = ({ user }) => {
   const { name, email, image, heart } = user;
-  const { setPopUp } = useContext(DataContext) as {
-    setPopUp: (content: { title: string, component: ReactNode } | null) => void;
-  };
+  const { setPopUp } = usePopupStore();
 
   function handleChallanges(){
     console.log('challanges')

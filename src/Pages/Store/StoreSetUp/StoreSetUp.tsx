@@ -1,27 +1,22 @@
 // src/Pages/Store/StoreSetUp.tsx
-import React, { ReactNode, useContext } from 'react';
 import styles from './StoreSetUp.module.css';
 import ProductCard from '../ProductCard/ProductCard';
 import storeData from '../../../fakeData/storesData.json'
-import DataContext from '../../../context/DataContext';
 import NewProduct from '../NewProduct/NewProduct';
+import { usePopupStore } from '../../../store';
 
 const StoreSetUp: React.FC = () => {
     // const storeId = location.pathname.split('/')[2] 
     const store = storeData[0]
     const { products } = store
 
-    const { setPopUp } = useContext(DataContext) as {
-        setPopUp: (content: { title: string, component: ReactNode } | null) => void;
-      };
-    
-      function handleNewCard(){
+    const { setPopUp } = usePopupStore()
+
+    function handleNewCard() {
         console.log('new card')
-            setPopUp({ title: 'New Card', component: <NewProduct onClose={function (): void {
-                throw new Error('Function not implemented.');
-            } } /> });
-      }
-    
+        setPopUp({ title: 'New Card', component: <NewProduct /> });
+    }
+
 
     return (
         <div className={styles.container}>
