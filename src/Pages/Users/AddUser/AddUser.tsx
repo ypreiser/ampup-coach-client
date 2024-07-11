@@ -16,18 +16,18 @@ const AddUser = () => {
     setUsers(newUsers);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // TODO: handle form submission
     console.log(users);
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.addUserForm}>
       <h3>Add User</h3>
       {users.map((user, index) => (
         <div key={index} className={styles.user}>
-          <label>
+          <label className={styles.userLabel}>
             Name
             <Input
               type="text"
@@ -37,7 +37,7 @@ const AddUser = () => {
               placeholder="Name"
             />
           </label>
-          <label>
+          <label className={styles.userLabel}>
             Email
             <Input
               type="email"
@@ -47,7 +47,7 @@ const AddUser = () => {
               placeholder="Email"
             />
           </label>
-          <label>
+          <label className={styles.userLabel}>
             Phone
             <Input
               type="tel"
@@ -57,14 +57,14 @@ const AddUser = () => {
               placeholder="Phone"
             />
           </label>
-          <hr className={styles.hr} />
+          <hr className={styles.userHr} />
         </div>
       ))}
-      <div className={styles.buttons}>
-        <Button type="button" className={styles.addUser} onClick={handleAddUser}>
+      <div className={styles.addUserButtons}>
+        <button type="button" className={styles.addUserButton} onClick={handleAddUser}>
           <span>+</span> Add Another User
-        </Button>
-        <Button type="submit" className={styles.submitButton}>
+        </button>
+        <Button type="submit" className='create'>
           Add Users
         </Button>
       </div>

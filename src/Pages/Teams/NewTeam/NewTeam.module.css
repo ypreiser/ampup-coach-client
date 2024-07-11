@@ -1,60 +1,57 @@
-/* src/components/NewTeam.module.css */
-
-.form {
+.newTeamForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-h2,
-h3 {
-    color: var(--text-color);
-}
-
-label {
+  }
+  
+  .teamNameLabel,
+  .joinLinkLabel,
+  .memberNameLabel,
+  .memberEmailLabel,
+  .memberPhoneLabel {
     display: flex;
     flex-direction: column;
     color: var(--text-color);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    all: unset;
+  }
+  
+  .newTeamForm input[type="text"],
+  .newTeamForm input[type="email"],
+  .newTeamForm input[type="tel"] {
+    /* all: unset; */
     background-color: var(--gray30);
     padding: 10px;
     margin-top: 5px;
     border-radius: 12px;
-
-}
-
-.joinLink {
+  }
+  
+  .joinLink {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.joinLink span {
+  }
+  
+  .joinLink span {
     color: var(--text-color);
-}
-
-.member {
+  }
+  
+  .member {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.addMember {
+  }
+  
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .addMemberButton {
     color: var(--yellow);
     background-color: var(--main-bg-color);
-}
-
-.createButton {
+  }
+  
+  .createTeamButton {
     background-color: var(--gray40);
     border: none;
     border-radius: 16px;
@@ -63,16 +60,16 @@ input[type="tel"] {
     cursor: pointer;
     height: 45px;
     box-shadow: inset 1px 0px 0.3px 0.3px rgba(255,255,255,1);
-}
-
-.required {
+  }
+  
+  .required {
     color: var(--red);
-}
-.hr{
-
+  }
+  
+  .memberHr {
     color: var(--gray30);
     width: 90%;
     height: 1px;
     margin: 15px;
-
-}
+  }
+  
