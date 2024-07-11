@@ -14,13 +14,8 @@ interface UserStore {
     logout: () => void;
 }
 
-export const useUserStore = create<UserStore>((set, get) => ({
+export const useUserStore = create<UserStore>((set) => ({
     user: null,
-
     login: (user: IUser) => set({ user }),
-
     logout: () => set({ user: null }),
-
-
-
 }));
