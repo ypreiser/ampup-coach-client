@@ -1,9 +1,11 @@
 .userProfile {
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 10px;
   border-radius: 5px;
   transition: padding 0.3s ease;
+  overflow: hidden;
   /* Smooth transition for padding */
 }
 
@@ -32,12 +34,22 @@
 }
 
 .userName {
+  width: 100px;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
 }
 
 .userEmail {
+  width: 100%;
   font-size: 12px;
   color: var(--gray60);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
 }
 
 .hr {

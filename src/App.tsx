@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Layout from "./Layout/Layout"
 import "./App.css"
-import ChallengesPage from "./Pages/Challanges/ChallengesPage"
-import TeamsPage from "./Pages/Teams/TeamsPage"
-import UsersPage from "./Pages/Users/UserPage"
-import StorePage from "./Pages/Store/StorePage"
-import StoreSetUp from "./Pages/Store/StoreSetUp/StoreSetUp"
+// import ChallengesPage from "./Pages/Challanges/ChallengesPage"
+// import TeamsPage from "./Pages/Teams/TeamsPage"
+// import UsersPage from "./Pages/Users/UserPage"
+// import StorePage from "./Pages/Store/StorePage"
+// import StoreSetUp from "./Pages/Store/StoreSetUp/StoreSetUp"
 // import TeamsPage from "./pages/TeamsPage"
 // import DecksPage from "./pages/DecksPage"
 // import StoresPage from "./pages/StoresPage"
@@ -20,38 +20,38 @@ const router = createBrowserRouter([
         path: "/",
         element: <div>Home Page</div>,
       },
-      {
-        path: "challenges",
-        element: <ChallengesPage />,
-      },
-      {
-        path: "teams",
-        element: <TeamsPage />,
-      },
-      {
-        path: "users",
-        element: <UsersPage />,
-      },
-      {
-        path: "decks",
-        element: <>DecksPage </>,
-      },
-      {
-        path: "decksCatalog",
-        element: <>decksCatalogPage </>,
-      },
-      {
-        path: "stores",
-        element: <StorePage />,
-      },
-      {
-        path: "stores/:storeId",
-        element: <StoreSetUp/>, 
-      },
-      {
-        path: "help",
-        element: <>HelpPage </>,
-      },
+      // {
+      //   path: "challenges",
+      //   element: <ChallengesPage />,
+      // },
+      // {
+      //   path: "teams",
+      //   element: <TeamsPage />,
+      // },
+      // {
+      //   path: "users",
+      //   element: <UsersPage />,
+      // },
+      // {
+      //   path: "decks",
+      //   element: <>DecksPage </>,
+      // },
+      // {
+      //   path: "decksCatalog",
+      //   element: <>decksCatalogPage </>,
+      // },
+      // {
+      //   path: "stores",
+      //   element: <StorePage />,
+      // },
+      // {
+      //   path: "stores/:storeId",
+      //   element: <StoreSetUp/>, 
+      // },
+      // {
+      //   path: "help",
+      //   element: <>HelpPage </>,
+      // },
     ],
   },
 ])

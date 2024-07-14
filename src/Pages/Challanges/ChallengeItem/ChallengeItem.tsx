@@ -31,10 +31,11 @@ const ChallengeItem: React.FC<ChallengeItemProps> = ({ challenge }) => {
         <div className={styles.right}>
           <div className={`${styles.status} ${styles[challenge.status]}`}></div>
           <div className={styles[challenge.status]}>{challenge.duration}</div>
+          {/* todo: mail */}
           <button className={styles.mail}><MailIcon fill='currentcolor' /></button>
         </div>
       </div>
-
+{/* todo: fix details */}
       {isOpen && (
         <div className={styles.details}>
           {challenge.challenges.map((c: any) => (

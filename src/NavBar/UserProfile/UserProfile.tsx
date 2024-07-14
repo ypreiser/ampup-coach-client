@@ -1,21 +1,27 @@
 import React from 'react';
 import styles from './UserProfile.module.css';
-import userData from '../../fakeData/userData.json';
+import { useUserStore } from '../../store';
 
 interface UserProfileProps {
   isOpen: boolean;
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({ isOpen }) => {
-  const { name, email, avatar } = userData;
+  const { user } = useUserStore();
+  console.log('profile:', user);
+  
+  if (!user) return <></>;
+  
+  const { fullName, email, picture } = user;
+
   return (
     <>
       <hr className={isOpen ? styles.hrOpen : styles.hr} />
       <div className={styles.userProfile}>
-        <img src={avatar} alt={name} className={styles.userImage} />
+        <img src={picture} alt={fullName} className={styles.userImage} />
         {isOpen && (
-          <div className={isOpen? styles.userInfoOpen: styles.userInfo}>
-            <span className={styles.userName}>{name}</span>
+          <div className={isOpen ? styles.userInfoOpen : styles.userInfo}>
+            <span className={styles.userName}>{fullName}</span>
             <span className={styles.userEmail}>{email}</span>
           </div>
         )}

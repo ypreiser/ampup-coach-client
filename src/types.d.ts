@@ -25,9 +25,13 @@ export interface IChallenge {
 }
 
 export interface IUser {
-  // Define user properties
-  id: string;
-  // name: string;
-  // email: string;
-  // Add other user properties as needed
+  fullName: string
+  email: string
+  permission: Permission
+  password?: string
+  picture?: string
+  link?: string
+  myChallenges?: any[]
+  phoneNumber: string
+  id: string
 }

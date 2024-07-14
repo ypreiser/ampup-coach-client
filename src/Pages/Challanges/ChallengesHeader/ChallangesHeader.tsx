@@ -17,6 +17,7 @@ const ChallengesHeader: React.FC = () => {
             <ArrowDownIcon fill='currentcolor' />
           </div>
         </div>
+        {/* todo: create challenge */}
         <Button className='create' type={'button'} >Create Challenge</Button>
       </div>
     </header>

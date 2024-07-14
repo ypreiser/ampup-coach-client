@@ -38,6 +38,7 @@ const NavBar = () => {
         <div className={styles.navHeader}>
           <AmpUpIcon fill='currentcolor' />
           {isOpen && <h1>AmpUp</h1>}
+          {/* todo: fix toggle button css and icon*/}
           <div className={styles.toggleButton} onClick={handleToggle}>
             {isOpen ? <ArrowLeftIcon fill={active} /> : <ArrowRightIcon fill={active} />}
           </div>
