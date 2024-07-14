@@ -15,4 +15,10 @@
     height: 45px;
     box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
   }
+  .add{
+
+    color: var(--yellow);
+    background-color: var(--main-bg-color);
+    
+  }
   

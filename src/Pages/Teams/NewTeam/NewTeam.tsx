@@ -88,10 +88,10 @@ const NewTeam = () => {
             </div>
           ))}
           <div className={styles.buttonContainer}>
-            <Button type="button" className={styles.addMemberButton} onClick={handleAddMember}>
+            <Button type="button" className='add' onClick={handleAddMember}>
               <span>+</span> Add Another User
             </Button>
-            <Button type="submit" className={styles.createTeamButton}>
+            <Button type="submit" className='create'>
               Create Team
             </Button>
           </div>

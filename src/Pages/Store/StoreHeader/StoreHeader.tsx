@@ -4,7 +4,7 @@ import styles from './StoreHeader.module.css';
 
 const StoreHeader = () => {
 
-
+//todo: handle new store
     function handleNewStore() {
         console.log('New Store');
     }
@@ -20,7 +20,7 @@ const StoreHeader = () => {
                         <SearchIcon fill='currentcolor' />
                     </div>
                 </div>
-                <Button className={styles.createButton} onClick={handleNewStore} type={'button'}>
+                <Button className='create' onClick={handleNewStore} type={'button'}>
                     Set Up New Store
                 </Button>
             </div>
