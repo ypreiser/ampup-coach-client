@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const isProduction: string = import.meta.env.VITE_PRODUCTION;
+const isProduction = import.meta.env.VITE_PRODUCTION === 'true';
 // todo: fix prodUrl
 const prodUrl = 'https://ampup.pro/api/';
 const devUrl = 'http://localhost:3030/';
@@ -18,19 +18,19 @@ export const apiRequest = async ({
   body,
   options = {},
 }: ApiRequestOptions): Promise<any> => {
-  // console.log('apiCall \n', { method, path, body });
-
   try {
     const finalPath = path.startsWith('/') ? path.slice(1) : path;
-    const baseUrl = isProduction === 'true' ? prodUrl : devUrl;
+    const baseUrl = isProduction ? prodUrl : devUrl;
     const url = `${baseUrl}${finalPath}`;
+
+    console.log('URL used:', url); // Add this line
 
     const response: AxiosResponse<any> = await axios({
       method,
       url,
       data: body,
       headers: {
-        Authorization: `Bearer ${localStorage.token || ''}`,
+        Authorization: `Bearer ${localStorage.getItem('token') || ''}`,
       },
       ...options,
     });
