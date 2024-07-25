@@ -10,7 +10,11 @@ const AddUser = () => {
     setUsers([...users, { name: '', email: '', phone: '' }]);
   };
 
-  const handleUserChange = (index: number, field: 'name' | 'email' | 'phone', value: string) => {
+  const handleUserChange = (
+    index: number,
+    field: 'name' | 'email' | 'phone',
+    value: string,
+  ) => {
     const newUsers = [...users];
     newUsers[index][field] = value;
     setUsers(newUsers);
@@ -61,10 +65,14 @@ const AddUser = () => {
         </div>
       ))}
       <div className={styles.addUserButtons}>
-        <button type="button" className={styles.addUserButton} onClick={handleAddUser}>
+        <button
+          type="button"
+          className={styles.addUserButton}
+          onClick={handleAddUser}
+        >
           <span>+</span> Add Another User
         </button>
-        <Button type="submit" className='create'>
+        <Button type="submit" className="create">
           Add Users
         </Button>
       </div>

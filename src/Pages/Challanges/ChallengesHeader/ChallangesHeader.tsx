@@ -8,17 +8,20 @@ const ChallengesHeader: React.FC = () => {
     <header className={styles.header}>
       <h1>Challenges</h1>
       <div className={styles.filterAndCreate}>
-
         {/* todo filter by dropdown */}
 
         <div className={styles.filter}>
-          <span><FilterIcon fill='currentcolor' /> filter by: </span>
+          <span>
+            <FilterIcon fill="currentcolor" /> filter by:{' '}
+          </span>
           <div className={styles.icon}>
-            <ArrowDownIcon fill='currentcolor' />
+            <ArrowDownIcon fill="currentcolor" />
           </div>
         </div>
         {/* todo: create challenge */}
-        <Button className='create' type={'button'} >Create Challenge</Button>
+        <Button className="create" type={'button'}>
+          Create Challenge
+        </Button>
       </div>
     </header>
   );

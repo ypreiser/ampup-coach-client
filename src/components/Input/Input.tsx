@@ -10,10 +10,19 @@ interface InputProps {
   required?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ type, value, onChange, placeholder, label, required }) => {
+const Input: React.FC<InputProps> = ({
+  type,
+  value,
+  onChange,
+  placeholder,
+  label,
+  required,
+}) => {
   return (
     <div className={styles.inputContainer}>
-      {label && <label className={required ? styles.requiredLabel : ''}>{label}</label>}
+      {label && (
+        <label className={required ? styles.requiredLabel : ''}>{label}</label>
+      )}
       <input
         type={type}
         value={value}

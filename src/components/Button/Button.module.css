@@ -1,24 +1,20 @@
 .button {
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 16px;
-    cursor: pointer;
-    color: var(--text-color);
-    
-  }
-  
-  .create {
-    background-color: var(--gray40);
-    border-radius: 16px;
-    padding: 10px 20px;
-    height: 45px;
-    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
-  }
-  .add{
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  cursor: pointer;
+  color: var(--text-color);
+}
 
-    color: var(--yellow);
-    background-color: var(--main-bg-color);
-    
-  }
-  
+.create {
+  background-color: var(--gray40);
+  border-radius: 16px;
+  padding: 10px 20px;
+  height: 45px;
+  box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
+}
+.add {
+  color: var(--yellow);
+  background-color: var(--main-bg-color);
+}

@@ -15,9 +15,9 @@
   color: var(--text-color);
 }
 
-.addUserForm input[type="text"],
-.addUserForm input[type="email"],
-.addUserForm input[type="tel"] {
+.addUserForm input[type='text'],
+.addUserForm input[type='email'],
+.addUserForm input[type='tel'] {
   all: unset;
   background-color: var(--gray30);
   padding: 10px;

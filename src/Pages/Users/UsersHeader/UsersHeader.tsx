@@ -10,7 +10,7 @@ const UsersHeader = () => {
   const { setPopUp } = usePopupStore();
   const handleAddUser = () => {
     console.log('add user');
-    
+
     setPopUp({ title: 'Add User', component: <AddUser /> });
   };
 
@@ -21,10 +21,14 @@ const UsersHeader = () => {
         <div className={styles.searchBar}>
           <input type="text" placeholder="Search" />
           <div className={styles.searchIcon}>
-          <SearchIcon fill='currentcolor' />
+            <SearchIcon fill="currentcolor" />
           </div>
         </div>
-        <Button className={styles.createButton} onClick={handleAddUser} type={'button'}>
+        <Button
+          className={styles.createButton}
+          onClick={handleAddUser}
+          type={'button'}
+        >
           Add User
         </Button>
       </div>

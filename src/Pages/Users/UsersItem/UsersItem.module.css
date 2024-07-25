@@ -1,13 +1,10 @@
 /* src/components/TeamsItem.module.css */
-.teamsItem{
+.teamsItem {
   font-size: 14px;
-
 }
 .teamsItem td {
   padding: 5px;
 }
-
-
 
 .memberImage {
   width: 40px;

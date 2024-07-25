@@ -10,13 +10,13 @@ import {
   ChallengesIcon,
   TeamsIcon,
   HelpIcon,
-  StoresIcon // Assuming you have this icon as well
+  StoresIcon, // Assuming you have this icon as well
 } from '../components/Icons/Icons';
 
 import styles from './NavBar.module.css';
 
 import UserProfile from './UserProfile/UserProfile';
-const active = "#ffd05b";
+const active = '#ffd05b';
 
 const NavBar = () => {
   const [openMenu, setOpenMenu] = useState<string>('');
@@ -34,13 +34,16 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} ${isOpen ? styles.open : styles.closed}`}>
       <div className={styles.headAndList}>
-
         <div className={styles.navHeader}>
-          <AmpUpIcon fill='currentcolor' />
+          <AmpUpIcon fill="currentcolor" />
           {isOpen && <h1>AmpUp</h1>}
           {/* todo: fix toggle button css and icon*/}
           <div className={styles.toggleButton} onClick={handleToggle}>
-            {isOpen ? <ArrowLeftIcon fill={active} /> : <ArrowRightIcon fill={active} />}
+            {isOpen ? (
+              <ArrowLeftIcon fill={active} />
+            ) : (
+              <ArrowRightIcon fill={active} />
+            )}
           </div>
         </div>
         <ul className={styles.navList}>
@@ -48,15 +51,20 @@ const NavBar = () => {
             <NavLink
               onClick={() => handleMenuToggle('challenges')}
               to="/challenges"
-              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ''}`
+              }
             >
-
               <>
                 <ChallengesIcon fill="currentcolor" />
                 {isOpen && <span>Challenges</span>}
                 {isOpen && (
                   <span className={styles.arrow}>
-                    {openMenu === 'challenges' ? <ArrowUpIcon fill='currentcolor' /> : <ArrowDownIcon fill='currentcolor' />}
+                    {openMenu === 'challenges' ? (
+                      <ArrowUpIcon fill="currentcolor" />
+                    ) : (
+                      <ArrowDownIcon fill="currentcolor" />
+                    )}
                   </span>
                 )}
               </>
@@ -65,14 +73,20 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/teams"
-              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ''}`
+              }
               onClick={() => handleMenuToggle('teams')}
             >
-              <TeamsIcon fill='currentcolor' />
+              <TeamsIcon fill="currentcolor" />
               {isOpen && <span>Teams</span>}
               {isOpen && (
                 <span className={styles.arrow}>
-                  {openMenu === 'teams' ? <ArrowUpIcon fill='currentcolor' /> : <ArrowDownIcon fill='currentcolor' />}
+                  {openMenu === 'teams' ? (
+                    <ArrowUpIcon fill="currentcolor" />
+                  ) : (
+                    <ArrowDownIcon fill="currentcolor" />
+                  )}
                 </span>
               )}
             </NavLink>
@@ -81,7 +95,9 @@ const NavBar = () => {
                 <li>
                   <NavLink
                     to="/users"
-                    className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+                    className={({ isActive }) =>
+                      `${styles.navItem} ${isActive ? styles.active : ''}`
+                    }
                   >
                     <span>Users</span>
                   </NavLink>
@@ -92,14 +108,20 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/decks"
-              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ''}`
+              }
               onClick={() => handleMenuToggle('decks')}
             >
-              <DecksIcon fill='currentcolor' />
+              <DecksIcon fill="currentcolor" />
               {isOpen && <span>Decks</span>}
               {isOpen && (
                 <span className={styles.arrow}>
-                  {openMenu === 'decks' ? <ArrowUpIcon fill='currentcolor' /> : <ArrowDownIcon fill='currentcolor' />}
+                  {openMenu === 'decks' ? (
+                    <ArrowUpIcon fill="currentcolor" />
+                  ) : (
+                    <ArrowDownIcon fill="currentcolor" />
+                  )}
                 </span>
               )}
             </NavLink>
@@ -108,7 +130,9 @@ const NavBar = () => {
                 <li>
                   <NavLink
                     to="/decksCatalog"
-                    className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+                    className={({ isActive }) =>
+                      `${styles.navItem} ${isActive ? styles.active : ''}`
+                    }
                   >
                     <span>Deck Catalog</span>
                   </NavLink>
@@ -120,13 +144,19 @@ const NavBar = () => {
             <NavLink
               onClick={() => handleMenuToggle('stores')}
               to="/stores"
-              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+              className={({ isActive }) =>
+                `${styles.navItem} ${isActive ? styles.active : ''}`
+              }
             >
-              <StoresIcon fill='currentcolor' />
+              <StoresIcon fill="currentcolor" />
               {isOpen && <span>Stores</span>}
               {isOpen && (
                 <span className={styles.arrow}>
-                  {openMenu === 'stores' ? <ArrowUpIcon fill='currentcolor' /> : <ArrowDownIcon fill='currentcolor' />}
+                  {openMenu === 'stores' ? (
+                    <ArrowUpIcon fill="currentcolor" />
+                  ) : (
+                    <ArrowDownIcon fill="currentcolor" />
+                  )}
                 </span>
               )}
             </NavLink>
@@ -136,9 +166,11 @@ const NavBar = () => {
       <div className={isOpen ? styles.navFooterOpen : styles.navFooterClosed}>
         <NavLink
           to="/help"
-          className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+          className={({ isActive }) =>
+            `${styles.navItem} ${isActive ? styles.active : ''}`
+          }
         >
-          <HelpIcon fill='currentColor' />
+          <HelpIcon fill="currentColor" />
           {isOpen && <span>Help</span>}
         </NavLink>
         <UserProfile isOpen={isOpen} />

@@ -1,14 +1,31 @@
 import React from 'react';
 import ChallengeItem from '../ChallengeItem/ChallengeItem';
-import challengesData from '../../../fakeData/challengesData.json';
 import styles from './ChallengeList.module.css';
+import { useUserStore } from '../../../store';
 
 const ChallengeList: React.FC = () => {
+  const { user } = useUserStore();
+  const challengesData = user?.myChallenges;
+  console.log(challengesData);
+
+  // let challenges = user?.myChallenges
+  // console.log(challenges);
+  // react.useEffect(() => {
+  //   if (user) {
+  //     apiRequest({ method: 'GET', path: `/challenges` });
+  //     console.log({user});
+  //   }
+  // }, []);
+
   return (
     <div className={styles.challengeList}>
-      {challengesData.map(challenge => (
-        <ChallengeItem key={challenge.id} challenge={challenge} />
-      ))}
+      {!challengesData ? (
+        <h1>no challenges</h1>
+      ) : (
+        challengesData.map((challenge) => (
+          <ChallengeItem key={challenge.id} challenge={challenge} />
+        ))
+      )}
     </div>
   );
 };

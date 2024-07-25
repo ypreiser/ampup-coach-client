@@ -1,236 +1,230 @@
 [
-    {
-        "id": 1,
-        "name": "Store 1",
-        "date": "2024-07-09",
-        "challenges": [
-            "ADHDParenting March"
-        ],
-        "products": [
-            {
-                "name": "Generic Frozen Chair",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 20,
-                "daysToExpiry": 6,
-                "expiryDay": {
-                    "$date": "2024-11-17T03:35:19.977Z"
-                },
-                "quantity": 10,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702c"
-                }
-            },
-            {
-                "name": "Recycled Metal Computer",
-                "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                "image": "/back.jpg",
-                "coins": 51,
-                "daysToExpiry": 4,
-                "expiryDay": {
-                    "$date": "2025-05-27T14:46:49.997Z"
-                },
-                "quantity": 1,
-                "cardType": "streak4",
-                "isActive": false,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702d"
-                }
-            },
-            {
-                "name": "Refined Bronze Salad",
-                "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                "image": "/back.jpg",
-                "coins": 43,
-                "daysToExpiry": 7,
-                "expiryDay": {
-                    "$date": "2025-02-26T01:24:17.673Z"
-                },
-                "quantity": 6,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702e"
-                }
-            },
-            {
-                "name": "Awesome Fresh Sausages",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 5,
-                "daysToExpiry": 8,
-                "expiryDay": {
-                    "$date": "2024-08-31T21:29:14.892Z"
-                },
-                "quantity": 2,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702f"
-                }
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Store 1",
-        "date": "2024-07-09",
-        "challenges": [
-            "ADHDParenting March"
-        ],
-        "products": [
-            {
-                "name": "Generic Frozen Chair",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 20,
-                "daysToExpiry": 6,
-                "expiryDay": {
-                    "$date": "2024-11-17T03:35:19.977Z"
-                },
-                "quantity": 10,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702c"
-                }
-            },
-            {
-                "name": "Recycled Metal Computer",
-                "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                "image": "/back.jpg",
-                "coins": 51,
-                "daysToExpiry": 4,
-                "expiryDay": {
-                    "$date": "2025-05-27T14:46:49.997Z"
-                },
-                "quantity": 1,
-                "cardType": "streak4",
-                "isActive": false,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702d"
-                }
-            },
-            {
-                "name": "Refined Bronze Salad",
-                "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                "image": "/back.jpg",
-                "coins": 43,
-                "daysToExpiry": 7,
-                "expiryDay": {
-                    "$date": "2025-02-26T01:24:17.673Z"
-                },
-                "quantity": 6,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702e"
-                }
-            },
-            {
-                "name": "Awesome Fresh Sausages",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 5,
-                "daysToExpiry": 8,
-                "expiryDay": {
-                    "$date": "2024-08-31T21:29:14.892Z"
-                },
-                "quantity": 2,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702f"
-                }
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Store 1",
-        "date": "2024-07-09",
-        "challenges": [
-            "ADHDParenting March"
-        ],
-        "products": [
-            {
-                "name": "Generic Frozen Chair",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 20,
-                "daysToExpiry": 6,
-                "expiryDay": {
-                    "$date": "2024-11-17T03:35:19.977Z"
-                },
-                "quantity": 10,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702c"
-                }
-            },
-            {
-                "name": "Recycled Metal Computer",
-                "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                "image": "/back.jpg",
-                "coins": 51,
-                "daysToExpiry": 4,
-                "expiryDay": {
-                    "$date": "2025-05-27T14:46:49.997Z"
-                },
-                "quantity": 1,
-                "cardType": "streak4",
-                "isActive": false,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702d"
-                }
-            },
-            {
-                "name": "Refined Bronze Salad",
-                "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                "image": "/back.jpg",
-                "coins": 43,
-                "daysToExpiry": 7,
-                "expiryDay": {
-                    "$date": "2025-02-26T01:24:17.673Z"
-                },
-                "quantity": 6,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": false,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702e"
-                }
-            },
-            {
-                "name": "Awesome Fresh Sausages",
-                "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                "image": "/back.jpg",
-                "coins": 5,
-                "daysToExpiry": 8,
-                "expiryDay": {
-                    "$date": "2024-08-31T21:29:14.892Z"
-                },
-                "quantity": 2,
-                "cardType": "streak2",
-                "isActive": true,
-                "isAction": true,
-                "_id": {
-                    "$oid": "66617a8a651728b3cf23702f"
-                }
-            }
-        ]
-    }
+  {
+    "id": 1,
+    "name": "Store 1",
+    "date": "2024-07-09",
+    "challenges": ["ADHDParenting March"],
+    "products": [
+      {
+        "name": "Generic Frozen Chair",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 20,
+        "daysToExpiry": 6,
+        "expiryDay": {
+          "$date": "2024-11-17T03:35:19.977Z"
+        },
+        "quantity": 10,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702c"
+        }
+      },
+      {
+        "name": "Recycled Metal Computer",
+        "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+        "image": "/back.jpg",
+        "coins": 51,
+        "daysToExpiry": 4,
+        "expiryDay": {
+          "$date": "2025-05-27T14:46:49.997Z"
+        },
+        "quantity": 1,
+        "cardType": "streak4",
+        "isActive": false,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702d"
+        }
+      },
+      {
+        "name": "Refined Bronze Salad",
+        "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+        "image": "/back.jpg",
+        "coins": 43,
+        "daysToExpiry": 7,
+        "expiryDay": {
+          "$date": "2025-02-26T01:24:17.673Z"
+        },
+        "quantity": 6,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702e"
+        }
+      },
+      {
+        "name": "Awesome Fresh Sausages",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 5,
+        "daysToExpiry": 8,
+        "expiryDay": {
+          "$date": "2024-08-31T21:29:14.892Z"
+        },
+        "quantity": 2,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702f"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Store 1",
+    "date": "2024-07-09",
+    "challenges": ["ADHDParenting March"],
+    "products": [
+      {
+        "name": "Generic Frozen Chair",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 20,
+        "daysToExpiry": 6,
+        "expiryDay": {
+          "$date": "2024-11-17T03:35:19.977Z"
+        },
+        "quantity": 10,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702c"
+        }
+      },
+      {
+        "name": "Recycled Metal Computer",
+        "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+        "image": "/back.jpg",
+        "coins": 51,
+        "daysToExpiry": 4,
+        "expiryDay": {
+          "$date": "2025-05-27T14:46:49.997Z"
+        },
+        "quantity": 1,
+        "cardType": "streak4",
+        "isActive": false,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702d"
+        }
+      },
+      {
+        "name": "Refined Bronze Salad",
+        "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+        "image": "/back.jpg",
+        "coins": 43,
+        "daysToExpiry": 7,
+        "expiryDay": {
+          "$date": "2025-02-26T01:24:17.673Z"
+        },
+        "quantity": 6,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702e"
+        }
+      },
+      {
+        "name": "Awesome Fresh Sausages",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 5,
+        "daysToExpiry": 8,
+        "expiryDay": {
+          "$date": "2024-08-31T21:29:14.892Z"
+        },
+        "quantity": 2,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702f"
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Store 1",
+    "date": "2024-07-09",
+    "challenges": ["ADHDParenting March"],
+    "products": [
+      {
+        "name": "Generic Frozen Chair",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 20,
+        "daysToExpiry": 6,
+        "expiryDay": {
+          "$date": "2024-11-17T03:35:19.977Z"
+        },
+        "quantity": 10,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702c"
+        }
+      },
+      {
+        "name": "Recycled Metal Computer",
+        "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+        "image": "/back.jpg",
+        "coins": 51,
+        "daysToExpiry": 4,
+        "expiryDay": {
+          "$date": "2025-05-27T14:46:49.997Z"
+        },
+        "quantity": 1,
+        "cardType": "streak4",
+        "isActive": false,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702d"
+        }
+      },
+      {
+        "name": "Refined Bronze Salad",
+        "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+        "image": "/back.jpg",
+        "coins": 43,
+        "daysToExpiry": 7,
+        "expiryDay": {
+          "$date": "2025-02-26T01:24:17.673Z"
+        },
+        "quantity": 6,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": false,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702e"
+        }
+      },
+      {
+        "name": "Awesome Fresh Sausages",
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "image": "/back.jpg",
+        "coins": 5,
+        "daysToExpiry": 8,
+        "expiryDay": {
+          "$date": "2024-08-31T21:29:14.892Z"
+        },
+        "quantity": 2,
+        "cardType": "streak2",
+        "isActive": true,
+        "isAction": true,
+        "_id": {
+          "$oid": "66617a8a651728b3cf23702f"
+        }
+      }
+    ]
+  }
 ]

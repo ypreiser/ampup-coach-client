@@ -21,9 +21,12 @@ const StoreItem: React.FC<StoreItemProps> = ({ store }) => {
       <tr className={styles.storeItem}>
         <td>{name}</td>
         <td>{date}</td>
-        <td>{challenges.length == 1 ? challenges[0]
-          : challenges.length > 1 ? `${challenges[0]} and ${challenges.length - 1} more`
-            : "No challenges"}
+        <td>
+          {challenges.length == 1
+            ? challenges[0]
+            : challenges.length > 1
+              ? `${challenges[0]} and ${challenges.length - 1} more`
+              : 'No challenges'}
         </td>
         <td className={styles.actions}>
           <button className={styles.duplicateButton}>

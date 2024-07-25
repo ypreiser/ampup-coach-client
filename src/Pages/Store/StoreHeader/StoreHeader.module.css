@@ -1,52 +1,52 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10px 10px 10px;
-    background-color: var(--gray20);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 10px 10px;
+  background-color: var(--gray20);
 }
 
 .searchCreateContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .searchBar {
-    background-color: var(--gray30);
-    padding: 20px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 16px;
-    color: var(--gray50);
-    height: 45px;
+  background-color: var(--gray30);
+  padding: 20px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 16px;
+  color: var(--gray50);
+  height: 45px;
 }
 
 .searchIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchBar input {
-    border: none;
-    outline: none;
-    padding: 5px;
-    background-color: inherit;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: inherit;
 }
 
 .createButton {
-    background-color: var(--gray40);
-    border: none;
-    border-radius: 16px;
-    padding: 10px 20px;
-    color: var(--text-color);
-    cursor: pointer;
-    height: 45px;
-    /* border: var(--text-color) 1px solid; */
-    box-shadow: inset 1px 0px 0.3px 0.3px rgba(255,255,255,1);
+  background-color: var(--gray40);
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  color: var(--text-color);
+  cursor: pointer;
+  height: 45px;
+  /* border: var(--text-color) 1px solid; */
+  box-shadow: inset 1px 0px 0.3px 0.3px rgba(255, 255, 255, 1);
 }

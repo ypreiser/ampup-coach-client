@@ -20,7 +20,6 @@
   padding: 1rem;
 
   && .right {
-
     display: flex;
     gap: 15px;
     align-items: center;
@@ -30,7 +29,6 @@
     display: flex;
     gap: 15px;
     align-items: center;
-
   }
 }
 
@@ -48,7 +46,6 @@
   outline: none;
   box-shadow: none;
   cursor: pointer;
-
 }
 
 .details {
@@ -86,10 +83,8 @@
   aspect-ratio: 1/1;
   border-radius: 100%;
 
-
   &&.Active {
     background-color: var(--green);
-
   }
 
   &&.Pending {
@@ -103,5 +98,4 @@
 
 .Done {
   color: var(--gray50);
-
 }

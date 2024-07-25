@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
-import { apiRequest } from "./apiRequest";
+import { useCallback, useEffect, useState } from 'react';
+import { apiRequest } from './apiRequest';
+import { AxiosRequestConfig } from 'axios';
 
 interface UseApiOptions {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   path: string;
-  body?: any;
-  options?: any;
-  dep?: any[];
+  body?: string[];
+  options?: AxiosRequestConfig<any>;
+  dep?: string[];
 }
 
 interface UseApiResponse<T> {
@@ -15,7 +16,13 @@ interface UseApiResponse<T> {
   error: Error | null;
 }
 
-export const useApi = <T>({ method, path, body, options, dep = [] }: UseApiOptions): UseApiResponse<T> => {
+export const useApi = <T>({
+  method,
+  path,
+  body,
+  options,
+  dep = [],
+}: UseApiOptions): UseApiResponse<T> => {
   const [data, setData] = useState<T | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
@@ -39,4 +46,4 @@ export const useApi = <T>({ method, path, body, options, dep = [] }: UseApiOptio
   }, dep);
 
   return { data, loading, error };
-}
+};

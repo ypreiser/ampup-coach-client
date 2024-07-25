@@ -1,7 +1,7 @@
 // src/components/TeamsList.tsx
 
 import styles from './UsersList.module.css';
-import  teams  from '../../../fakeData/TeamsData.json';
+import teams from '../../../fakeData/TeamsData.json';
 import UsersItem from '../UsersItem/UsersItem';
 import { ArrowDownIcon } from '../../../components/Icons/Icons';
 
@@ -14,17 +14,20 @@ const TeamsList = () => {
           <th>Challenge</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Date Added <ArrowDownIcon fill={undefined} /></th>
-          <th>Last Seen <ArrowDownIcon fill={undefined} /></th>
-          <th>Overall Points <ArrowDownIcon fill={undefined} /></th>
+          <th>
+            Date Added <ArrowDownIcon fill={undefined} />
+          </th>
+          <th>
+            Last Seen <ArrowDownIcon fill={undefined} />
+          </th>
+          <th>
+            Overall Points <ArrowDownIcon fill={undefined} />
+          </th>
         </tr>
       </thead>
       <tbody>
         {teams[0].members.map((user, index) => (
-          <UsersItem
-            key={index}
-            user={user}
-          />
+          <UsersItem key={index} user={user} />
         ))}
       </tbody>
     </table>

@@ -3,9 +3,7 @@ import styles from './NewProduct.module.css';
 import Button from '../../../components/Button/Button';
 import { usePopupStore } from '../../../store';
 const NewProduct: React.FC = () => {
-
-
-  const { setPopUp } = usePopupStore()
+  const { setPopUp } = usePopupStore();
 
   const [product, setProduct] = useState({
     name: '',
@@ -18,7 +16,9 @@ const NewProduct: React.FC = () => {
     image: null as File | null,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setProduct({ ...product, [name]: value });
   };
@@ -34,51 +34,104 @@ const NewProduct: React.FC = () => {
     // todo: Handle form submission logic here
     console.log(product);
     setPopUp(null);
-
   };
 
   return (
-
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.uploadContainer}>
         <label htmlFor="fileUpload" className={styles.uploadLabel}>
           <div className={styles.uploadText}>Upload File</div>
-          <div className={styles.uploadSubText}>We support PDF, JPG, PNG, SVG. <br /> All files must be no larger than 5.0 GB</div>
+          <div className={styles.uploadSubText}>
+            We support PDF, JPG, PNG, SVG. <br /> All files must be no larger
+            than 5.0 GB
+          </div>
         </label>
-        <input type="file" id="fileUpload" onChange={handleFileChange} className={styles.fileInput} />
+        <input
+          type="file"
+          id="fileUpload"
+          onChange={handleFileChange}
+          className={styles.fileInput}
+        />
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="name">Card Name</label>
-        <input type="text" id="name" name="name" value={product.name} onChange={handleChange} />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={product.name}
+          onChange={handleChange}
+        />
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="price">Set Card Price</label>
-        <input type="number" id="price" name="price" value={product.price} onChange={handleChange} />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={product.price}
+          onChange={handleChange}
+        />
       </div>
       <div className={styles.small}>
-
         <div className={styles.inputContainer}>
           <label htmlFor="amountPerChallenge">Amount per Challenge</label>
-          <input type="number" id="amountPerChallenge" name="amountPerChallenge" value={product.amountPerChallenge} onChange={handleChange} />
+          <input
+            type="number"
+            id="amountPerChallenge"
+            name="amountPerChallenge"
+            value={product.amountPerChallenge}
+            onChange={handleChange}
+          />
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="dayToAvailability">Day to Availability</label>
-          <input type="number" id="dayToAvailability" name="dayToAvailability" value={product.dayToAvailability} onChange={handleChange} />
+          <input
+            type="number"
+            id="dayToAvailability"
+            name="dayToAvailability"
+            value={product.dayToAvailability}
+            onChange={handleChange}
+          />
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="personalPointToAvailability">Personal Point to Availability</label>
-          <input type="number" id="personalPointToAvailability" name="personalPointToAvailability" value={product.personalPointToAvailability} onChange={handleChange} />
+          <label htmlFor="personalPointToAvailability">
+            Personal Point to Availability
+          </label>
+          <input
+            type="number"
+            id="personalPointToAvailability"
+            name="personalPointToAvailability"
+            value={product.personalPointToAvailability}
+            onChange={handleChange}
+          />
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="groupPointsToAvailability">Group Points to Availability</label>
-          <input type="number" id="groupPointsToAvailability" name="groupPointsToAvailability" value={product.groupPointsToAvailability} onChange={handleChange} />
+          <label htmlFor="groupPointsToAvailability">
+            Group Points to Availability
+          </label>
+          <input
+            type="number"
+            id="groupPointsToAvailability"
+            name="groupPointsToAvailability"
+            value={product.groupPointsToAvailability}
+            onChange={handleChange}
+          />
         </div>
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="linkText">Link/ Text</label>
-        <input type="text" id="linkText" name="linkText" value={product.linkText} onChange={handleChange} />
+        <input
+          type="text"
+          id="linkText"
+          name="linkText"
+          value={product.linkText}
+          onChange={handleChange}
+        />
       </div>
-      <Button className='create' type="submit">Create Card</Button>
+      <Button className="create" type="submit">
+        Create Card
+      </Button>
     </form>
   );
 };

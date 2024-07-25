@@ -6,8 +6,8 @@
   box-sizing: border-box;
   font-family: 'sora';
   --yellow: #ffd05b;
-  --red: #FE7041;
-  --green: #4FC56E;
+  --red: #fe7041;
+  --green: #4fc56e;
   --main-bg-color: #000;
   --text-color: #fff;
   --gray90: rgb(243, 243, 243);
@@ -20,10 +20,9 @@
   --gray20: rgb(33, 33, 33);
   --gray10: rgb(22, 22, 22);
 
-  [data-theme="light"] {
+  [data-theme='light'] {
     --main-bg-color: #fff;
     --text-color: #000;
-    
 
     --gray10: rgb(243, 243, 243);
     --gray20: rgb(216, 216, 216);

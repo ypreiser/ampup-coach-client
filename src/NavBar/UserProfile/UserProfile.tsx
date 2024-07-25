@@ -8,10 +8,9 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ isOpen }) => {
   const { user } = useUserStore();
-  console.log('profile:', user);
-  
+
   if (!user) return <></>;
-  
+
   const { fullName, email, picture } = user;
 
   return (

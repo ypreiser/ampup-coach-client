@@ -1,8 +1,6 @@
 import styles from './PopUp.module.css';
 import { XIcon } from '../Icons/Icons';
-import { usePopupStore } from '../../store'
-
-
+import { usePopupStore } from '../../store';
 
 export default function PopUp() {
   const { PopUp, setPopUp } = usePopupStore();
@@ -25,9 +23,7 @@ export default function PopUp() {
                 <XIcon fill="white" />
               </div>
             </div>
-            <div className={styles.main}>
-              {PopUp.component}
-            </div>
+            <div className={styles.main}>{PopUp.component}</div>
           </div>
         </div>
       )}

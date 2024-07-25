@@ -1,105 +1,98 @@
-
 .container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.262);
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.262);
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 }
 
 @keyframes slideIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-
-    }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .popup {
-    width: fit-content;
-    min-width: 37%;
-    max-width: 60%;
-    max-height: 90%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-    align-self: center;
-    position: relative;
-    animation: slideIn 0.3s ease-in-out;
-    gap: 25px;
-    padding: 30px, 30px, 25px, 30px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    margin: 10px;
-
+  width: fit-content;
+  min-width: 37%;
+  max-width: 60%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  align-self: center;
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+  gap: 25px;
+  padding: 30px, 30px, 25px, 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin: 10px;
 }
 
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-height: 90%;
-    overflow-y: auto;
-    max-width: 90%;
-    padding-right: 40px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 90%;
+  overflow-y: auto;
+  max-width: 90%;
+  padding-right: 40px;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--gray20);
-    border-radius: 20px;
-
+  background: var(--gray20);
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-color);
-    border-radius: 20px;
+  background: var(--text-color);
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gray50);
+  background: var(--gray50);
 }
 
 .top {
-
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 30px 30px 10px 20px;
-    width: 100%;
-    gap: 25px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 30px 10px 20px;
+  width: 100%;
+  gap: 25px;
 }
 
 .close {
-    height: 38px;
-    width: 38px;
-    border: 1px var(--text-color) solid;
-    color: var(--text-color);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gray30);
-    border-radius: 8px;
-
+  height: 38px;
+  width: 38px;
+  border: 1px var(--text-color) solid;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray30);
+  border-radius: 8px;
 }

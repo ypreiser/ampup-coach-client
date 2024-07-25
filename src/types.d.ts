@@ -10,7 +10,6 @@ interface UsePopupStore {
   setPopUp: (popup: PopUpState | null) => void;
 }
 
-
 export interface ICard {
   _id: string;
   cardOrder: number;
@@ -25,13 +24,13 @@ export interface IChallenge {
 }
 
 export interface IUser {
-  fullName: string
-  email: string
-  permission: Permission
-  password?: string
-  picture?: string
-  link?: string
-  myChallenges?: any[]
-  phoneNumber: string
-  id: string
+  fullName: string;
+  email: string;
+  permission: Permission;
+  password?: string;
+  picture?: string;
+  link?: string;
+  myChallenges?: any[];
+  phoneNumber: string;
+  id: string;
 }

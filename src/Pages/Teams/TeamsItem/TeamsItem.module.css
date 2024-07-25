@@ -12,12 +12,10 @@
 
 .duplicateButton,
 .deleteButton {
-
   background-color: transparent;
   border: none;
   cursor: pointer;
   margin-right: 10px;
-
 }
 
 .duplicateButton {
@@ -31,8 +29,7 @@
   border-radius: 8px;
   border: 1px solid var(--red);
   color: var(--red);
-  ;
 }
-.members{
+.members {
   cursor: pointer;
 }

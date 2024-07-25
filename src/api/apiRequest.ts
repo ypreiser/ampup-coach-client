@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const isProduction: string = import.meta.env.VITE_PRODUCTION;
 // todo: fix prodUrl
-const prodUrl = "https://ampup.pro/api/";
-const devUrl =  'http://localhost:3030/';
+const prodUrl = 'https://ampup.pro/api/';
+const devUrl = 'http://localhost:3030/';
 
 interface ApiRequestOptions {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -12,12 +12,17 @@ interface ApiRequestOptions {
   options?: AxiosRequestConfig;
 }
 
-export const apiRequest = async ({ method, path, body, options = {} }: ApiRequestOptions): Promise<any> => {
-  console.log('apiCall \n', { method, path, body });
+export const apiRequest = async ({
+  method,
+  path,
+  body,
+  options = {},
+}: ApiRequestOptions): Promise<any> => {
+  // console.log('apiCall \n', { method, path, body });
 
   try {
-    let finalPath = path.startsWith("/") ? path.slice(1) : path;
-    let baseUrl = isProduction === "true" ? prodUrl : devUrl;
+    const finalPath = path.startsWith('/') ? path.slice(1) : path;
+    const baseUrl = isProduction === 'true' ? prodUrl : devUrl;
     const url = `${baseUrl}${finalPath}`;
 
     const response: AxiosResponse<any> = await axios({
@@ -25,15 +30,15 @@ export const apiRequest = async ({ method, path, body, options = {} }: ApiReques
       url,
       data: body,
       headers: {
-        Authorization: `Bearer ${localStorage.token || ''}`
+        Authorization: `Bearer ${localStorage.token || ''}`,
       },
-      ...options
+      ...options,
     });
 
-    console.log("response", response.data);
+    console.log('response', response.data);
     return response.data;
   } catch (error) {
-    console.error("Error:", (error as Error).message);
+    console.error('Error:', (error as Error).message);
     throw error;
   }
-}
+};

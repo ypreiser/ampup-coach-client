@@ -8,18 +8,15 @@
   color: var(--text-color);
   border-spacing: 0;
   overflow: hidden;
-
 }
 
 .table th,
 .table td {
   padding: 10px;
   text-align: left;
-
 }
 
 .thead {
-
   color: var(--gray80);
   background-color: var(--gray40);
   width: 100%;
@@ -31,11 +28,9 @@
   line-height: 14.56px;
   letter-spacing: -1px;
   text-align: left;
-
 }
 
 .table td {
   border-bottom: 1px solid var(--gray50);
   height: 65px;
 }
-

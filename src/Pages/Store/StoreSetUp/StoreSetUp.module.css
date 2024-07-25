@@ -2,7 +2,8 @@
   padding: 20px;
   margin: 30px;
   background-color: var(--gray20);
-  border-radius: 20px;  }
+  border-radius: 20px;
+}
 
 .header {
   display: flex;
@@ -10,71 +11,70 @@
   justify-content: space-between;
   align-items: center;
 }
-  
-  .saveButton {
-    float: right;
-    padding: 10px 20px;
-    background-color: var(--gray40);
-    color: var(--text-color);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 30px;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--gray30);
-    border-radius: 16px;
-    color: var(--text-color);
-    border-spacing: 0;
-    overflow: hidden;
-  }
-  
-  .thead {
-    color: var(--gray80);
-    background-color: var(--gray40);
-    width: 100%;
-    border-radius: 16px;
-    height: 45px;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 14.56px;
-    letter-spacing: -1px;
-    text-align: left;
-  }
-  
-  .table th,
-  .table td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .table td {
-    border-bottom: 1px solid var(--gray50);
-    height: 65px;
-  }
-  
-  .card {
-    display: flex;
-    align-items: center;
-  }
-  
-  .cardImage {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    margin-right: 10px;
-  }
-  
-  .newCardButton {
-    background-color: inherit;
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: var(--yellow);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
+
+.saveButton {
+  float: right;
+  padding: 10px 20px;
+  background-color: var(--gray40);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--gray30);
+  border-radius: 16px;
+  color: var(--text-color);
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.thead {
+  color: var(--gray80);
+  background-color: var(--gray40);
+  width: 100%;
+  border-radius: 16px;
+  height: 45px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 14.56px;
+  letter-spacing: -1px;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.table td {
+  border-bottom: 1px solid var(--gray50);
+  height: 65px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.cardImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.newCardButton {
+  background-color: inherit;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: var(--yellow);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -2,7 +2,7 @@
 
 import styles from './TeamsList.module.css';
 import TeamsItem from '../TeamsItem/TeamsItem';
-import  teams  from '../../../fakeData/TeamsData.json';
+import teams from '../../../fakeData/TeamsData.json';
 
 const TeamsList = () => {
   return (
@@ -19,10 +19,7 @@ const TeamsList = () => {
       </thead>
       <tbody>
         {teams.map((team, index) => (
-          <TeamsItem
-            key={index}
-            team={team}
-          />
+          <TeamsItem key={index} team={team} />
         ))}
       </tbody>
     </table>
