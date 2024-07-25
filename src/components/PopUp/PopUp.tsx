@@ -8,12 +8,17 @@ export default function PopUp() {
   return (
     <div className={styles.allpopup}>
       {PopUp && (
-        <div className={styles.container} onClick={() => setPopUp(null)}>
+        <div
+          className={styles.container}
+          onClick={() => setPopUp(null)}
+          data-testid="popup-container"
+        >
           <div
             className={styles.popup}
             onClick={(e) => {
               e.stopPropagation();
             }}
+            data-testid="popup-content"
           >
             <div className={styles.top}>
               <div>
