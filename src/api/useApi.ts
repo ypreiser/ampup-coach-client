@@ -1,49 +1,32 @@
-import { useCallback, useEffect, useState } from 'react';
+// src/api/useApi.ts
+
+import { useQuery, useMutation, UseQueryOptions } from '@tanstack/react-query';
 import { apiRequest } from './apiRequest';
 import { AxiosRequestConfig } from 'axios';
 
 interface UseApiOptions {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   path: string;
-  body?: string[];
-  options?: AxiosRequestConfig<any>;
-  dep?: string[];
+  body?: any;
+  options?: AxiosRequestConfig;
 }
 
-interface UseApiResponse<T> {
-  data: T | undefined;
-  loading: boolean;
-  error: Error | null;
-}
+export const useApi = <T>(
+  { method, path, body, options }: UseApiOptions,
+  queryOptions?: UseQueryOptions<T>,
+) => {
+  const queryKey = [path, method, body];
 
-export const useApi = <T>({
-  method,
-  path,
-  body,
-  options,
-  dep = [],
-}: UseApiOptions): UseApiResponse<T> => {
-  const [data, setData] = useState<T | undefined>();
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<Error | null>(null);
+  const query = useQuery<T>({
+    queryKey,
+    queryFn: () => apiRequest({ method, path, body, options }),
+    ...queryOptions,
+    enabled: method === 'GET' && queryOptions?.enabled !== false,
+  });
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const response = await apiRequest({ method, path, body, options });
-      setData(response);
-    } catch (error) {
-      setError(error as Error);
-    } finally {
-      setLoading(false);
-    }
-  }, [method, path, body, options]);
+  const mutation = useMutation<T, Error, void>({
+    mutationFn: () => apiRequest({ method, path, body, options }),
+  });
 
-  useEffect(() => {
-    if (path) {
-      fetchData();
-    }
-  }, dep);
-
-  return { data, loading, error };
+  return method === 'GET' ? query : mutation;
 };
