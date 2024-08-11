@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest",
+    "test": "vitest --ui",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky"
@@ -22,11 +22,14 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.16",
+    "@types/dompurify": "^3.0.5",
     "axios": "^1.7.2",
+    "dompurify": "^3.1.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.0",
     "vite-plugin-svgr": "^4.2.0",
+    "zod": "^3.23.8",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
@@ -40,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/ui": "^2.0.5",
     "axios-mock-adapter": "^1.22.0",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.0",

@@ -1,6 +1,6 @@
-/* src/components/ProductCard/ProductCard.module.css */
+/* src/components/PrizeCard/PrizeCard.module.css */
 
-.productCard {
+.prizeCard {
   border-bottom: 1px solid var(--gray50);
   height: 65px;
 }

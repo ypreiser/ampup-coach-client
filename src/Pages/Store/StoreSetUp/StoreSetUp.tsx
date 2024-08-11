@@ -1,20 +1,20 @@
 // src/Pages/Store/StoreSetUp.tsx
 import styles from './StoreSetUp.module.css';
-import ProductCard from '../ProductCard/ProductCard';
+import PrizeCard from '../PrizeCard/PrizeCard';
 import storeData from '../../../fakeData/storesData.json';
-import NewProduct from '../NewProduct/NewProduct';
+import NewPrize from '../NewPrize/NewPrize';
 import { usePopupStore } from '../../../store';
 
 const StoreSetUp: React.FC = () => {
   // const storeId = location.pathname.split('/')[2]
   const store = storeData[0];
-  const { products } = store;
+  const { prizes } = store;
 
   const { setPopUp } = usePopupStore();
 
   function handleNewCard() {
     console.log('new card');
-    setPopUp({ title: 'New Card', component: <NewProduct /> });
+    setPopUp({ title: 'New Card', component: <NewPrize /> });
   }
 
   return (
@@ -34,15 +34,15 @@ const StoreSetUp: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product, index) => (
-            <ProductCard
+          {prizes.map((prize, index) => (
+            <PrizeCard
               key={index}
-              quantity={product.quantity}
-              name={product.name}
-              description={product.description}
-              image={product.image}
-              coins={product.coins}
-              daysToExpiry={product.daysToExpiry}
+              quantity={prize.quantity}
+              name={prize.name}
+              description={prize.description}
+              image={prize.image}
+              coins={prize.coins}
+              daysToExpiry={prize.daysToExpiry}
             />
           ))}
         </tbody>

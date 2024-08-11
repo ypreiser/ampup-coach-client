@@ -9,7 +9,7 @@ interface StoreItemProps {
     name: string;
     date: string;
     challenges: string[];
-    products: any[];
+    prizes: any[];
   };
 }
 

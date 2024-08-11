@@ -1,8 +1,8 @@
-// src/components/ProductCard/ProductCard.tsx
+// src/components/PrizeCard/PrizeCard.tsx
 import React from 'react';
-import styles from './ProductCard.module.css';
+import styles from './PrizeCard.module.css';
 
-interface ProductCardProps {
+interface PrizeCardProps {
   name: string;
   description: string;
   image: string;
@@ -11,16 +11,16 @@ interface ProductCardProps {
   quantity: number;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const PrizeCard: React.FC<PrizeCardProps> = ({
   name,
   daysToExpiry,
   image,
   coins,
   quantity,
 }) => {
-  // const { name, daysToExpiry, image ,coins} = product
+  // const { name, daysToExpiry, image ,coins} = prize
   return (
-    <tr className={styles.productCard}>
+    <tr className={styles.prizeCard}>
       <td>
         <div className={styles.card}>
           <img src={image} alt={name} className={styles.cardImage} />
@@ -45,4 +45,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default PrizeCard;
