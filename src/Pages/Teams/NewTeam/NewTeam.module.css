@@ -1,7 +1,8 @@
 .newTeamForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
+  width: 100%;
 }
 
 .teamNameLabel,
@@ -19,7 +20,7 @@
 .newTeamForm input[type='tel'] {
   /* all: unset; */
   background-color: var(--gray30);
-  padding: 10px;
+  padding: 5px;
   margin-top: 5px;
   border-radius: 12px;
 }

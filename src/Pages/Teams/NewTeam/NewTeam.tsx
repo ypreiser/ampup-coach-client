@@ -1,4 +1,3 @@
-// src/Pages/Teams/NewTeam.tsx
 import { useState } from 'react';
 import { z } from 'zod';
 import DOMPurify from 'dompurify';
@@ -11,11 +10,25 @@ const phoneSchema = z.union([
   z.string().length(0), // Empty string
 ]);
 
-const memberSchema = z.object({
-  name: z.string().min(3, 'Name is required'),
-  email: z.string().email('Invalid email address'),
-  phone: phoneSchema.optional(),
-});
+const memberSchema = z
+  .object({
+    name: z.string().min(3, 'Name is required').optional(),
+    email: z.string().email('Invalid email address').optional(),
+    phone: phoneSchema.optional(),
+  })
+  .refine(
+    (data) => {
+      const isAnyFieldFilled = data.name || data.email || data.phone;
+      if (isAnyFieldFilled) {
+        return data.name && data.email;
+      }
+      return true;
+    },
+    {
+      message: 'Name and Email are required if any member field is filled',
+      path: ['name'],
+    },
+  );
 
 const teamSchema = z.object({
   teamName: z.string().min(3, 'Team name must be at least 3 characters'),
@@ -31,7 +44,7 @@ const NewTeam = () => {
     teamName: '',
     landingPageLink: '',
     landingPageTitle: '',
-    members: [{ name: '', email: '', phone: '' }],
+    members: [], // Ensure members is always an array
   });
   const [errors, setErrors] = useState<
     Partial<Record<keyof TeamSchema, string>>
@@ -47,12 +60,10 @@ const NewTeam = () => {
   };
 
   const handleAddMember = () => {
-    if (team.members) {
-      setTeam({
-        ...team,
-        members: [...team.members, { name: '', email: '', phone: '' }],
-      });
-    }
+    setTeam({
+      ...team,
+      members: [...(team.members || []), { name: '', email: '', phone: '' }],
+    });
   };
 
   const handleMemberChange = (
@@ -61,8 +72,7 @@ const NewTeam = () => {
     value: string,
   ) => {
     const sanitizedValue = DOMPurify.sanitize(value);
-    if (!team.members) return;
-    const newMembers = [...team.members];
+    const newMembers = [...(team.members || [])];
     newMembers[index] = { ...newMembers[index], [field]: sanitizedValue };
     setTeam({ ...team, members: newMembers });
     setErrors({ ...errors, members: undefined });
@@ -73,7 +83,6 @@ const NewTeam = () => {
     try {
       teamSchema.parse(team);
       console.log('Validated team:', team);
-      // TODO: handle form submission
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Partial<Record<keyof TeamSchema, string>> = {};
@@ -115,7 +124,7 @@ const NewTeam = () => {
             onChange={(e) =>
               handleInputChange('landingPageLink', e.target.value)
             }
-            required
+            placeholder="Optional Link"
           />
         </div>
         {errors.landingPageLink && (
@@ -126,8 +135,7 @@ const NewTeam = () => {
         type="text"
         value={team.landingPageTitle || ''}
         onChange={(e) => handleInputChange('landingPageTitle', e.target.value)}
-        required
-        placeholder="Landing Page Title"
+        placeholder="Landing Page Title (Optional)"
       />
       {errors.landingPageTitle && (
         <span className={styles.error}>{errors.landingPageTitle}</span>
@@ -136,7 +144,7 @@ const NewTeam = () => {
       {team.members?.map((member, index) => (
         <div key={index} className={styles.member}>
           <label className={styles.memberNameLabel}>
-            Name
+            Member Name
             <Input
               type="text"
               value={member.name || ''}
@@ -153,7 +161,6 @@ const NewTeam = () => {
               onChange={(e) =>
                 handleMemberChange(index, 'email', e.target.value)
               }
-              required
             />
           </label>
           <label className={styles.memberPhoneLabel}>
