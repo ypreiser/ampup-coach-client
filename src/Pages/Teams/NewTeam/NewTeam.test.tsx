@@ -26,18 +26,6 @@ describe('NewTeam Component', () => {
 
     const addMember = screen.getByText(/Add Member/i);
     expect(addMember).toBeInTheDocument();
-
-    // const name = screen.getByLabelText(/Member Name/i);
-    // expect(name).toBeInTheDocument();
-
-    // const email = screen.getByLabelText(/Email/i);
-    // expect(email).toBeInTheDocument();
-
-    // const phone = screen.getByLabelText(/Phone/i);
-    // expect(phone).toBeInTheDocument();
-
-    // const button = screen.getByRole('button', { name: /Add Another User/i });
-    // expect(button).toBeInTheDocument();
   });
 
   it('allows adding new members', async () => {
@@ -46,15 +34,15 @@ describe('NewTeam Component', () => {
     await userEvent.click(addButton);
 
     await waitFor(() => {
-      expect(screen.getAllByLabelText(/Member Name/i)).toHaveLength(1); //2
+      expect(screen.getAllByLabelText(/Member Name/i)).toHaveLength(1);
     });
 
     await waitFor(() => {
-      expect(screen.getAllByLabelText(/Email/i)).toHaveLength(1); //2
+      expect(screen.getAllByLabelText(/Email/i)).toHaveLength(1);
     });
 
     await waitFor(() => {
-      expect(screen.getAllByLabelText(/Phone/i)).toHaveLength(1); //2
+      expect(screen.getAllByLabelText(/Phone/i)).toHaveLength(1);
     });
   });
 
@@ -71,80 +59,130 @@ describe('NewTeam Component', () => {
     expect(teamNameError).toBeInTheDocument();
   });
 
-  //   it('shows error for invalid email', async () => {
-  //     render(<NewTeam />);
-  //     const addButton = screen.getByRole('button', { name: /Add Another User/i });
-  //     await userEvent.click(addButton);
+  it('shows error for missing member name', async () => {
+    render(<NewTeam />);
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
 
-  //     const emailInput = screen.getByLabelText(/Email/i);
-  //     await userEvent.type(emailInput, 'invalid-email');
-  //     const submitButton = screen.getByRole('button', { name: /Create Team/i });
-  //     await userEvent.click(submitButton);
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
 
-  //     const emailError = screen.getByText(/Invalid email address/i)
-  //     expect(emailError).toBeInTheDocument();
-  //   });
+    const memberNameError = await screen.findByText(
+      /Name and Email are required if any member field is filled/i,
+    );
+    expect(memberNameError).toBeInTheDocument();
+  });
 
-  //   it('shows error for invalid phone number', async () => {
-  //     render(<NewTeam />);
-  //     const phoneInput = screen.getByLabelText(/Phone/i);
-  //     await userEvent.type(phoneInput, 'invalid-phone');
-  //     const submitButton = screen.getByRole('button', { name: /Create Team/i });
-  //     await userEvent.click(submitButton);
+  it('shows error for missing member email', async () => {
+    render(<NewTeam />);
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
 
-  //     await waitFor(() => {
-  //       expect(screen.getByText(/Invalid phone number/i)).toBeInTheDocument();
-  //     });
-  //   });
+    const memberNameInput = screen.getByLabelText(/Member Name/i);
+    await userEvent.type(memberNameInput, 'John Doe');
 
-  //   it('submits form with valid data', async () => {
-  //     render(<NewTeam />);
-  //     await userEvent.type(screen.getByLabelText(/Team Name/i), 'Valid Team');
-  //     await userEvent.type(screen.getByLabelText(/Join Link/i), 'valid-link');
-  //     await userEvent.type(
-  //       screen.getByPlaceholderText(/Landing Page Title/i),
-  //       'Valid Title',
-  //     );
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
 
-  //     await userEvent.click(
-  //       screen.getByRole('button', { name: /Add Another User/i }),
-  //     );
+    const memberEmailError = await screen.findByText(
+      /Name and Email are required if any member field is filled/i,
+    );
+    expect(memberEmailError).toBeInTheDocument();
+  });
 
-  //     await waitFor(() => {
-  //       expect(screen.getAllByLabelText(/Name/i)).toHaveLength(2);
-  //     });
+  it('shows error for invalid member name', async () => {
+    render(<NewTeam />);
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
 
-  //     await waitFor(() => {
-  //       expect(screen.getAllByLabelText(/Email/i)).toHaveLength(2);
-  //     });
+    const memberNameInput = screen.getByLabelText(/Member Name/i);
+    await userEvent.type(memberNameInput, 'Jo'); // Invalid name (less than 3 characters)
 
-  //     await waitFor(() => {
-  //       expect(screen.getAllByLabelText(/Phone/i)).toHaveLength(2);
-  //     });
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
 
-  //     const nameInputs = screen.getAllByLabelText(/Name/i);
-  //     await userEvent.type(nameInputs[1], 'John Doe');
-  //     await userEvent.type(
-  //       screen.getAllByLabelText(/Email/i)[1],
-  //       'john@example.com',
-  //     );
-  //     await userEvent.type(screen.getAllByLabelText(/Phone/i)[1], '+1234567890');
+    const memberNameError = await screen.findByText(
+      /Name and Email are required if any member field is filled/i,
+    );
+    expect(memberNameError).toBeInTheDocument();
+  });
 
-  //     const submitButton = screen.getByRole('button', { name: /Create Team/i });
-  //     await userEvent.click(submitButton);
+  it('shows error for invalid member email', async () => {
+    render(<NewTeam />);
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
 
-  //     await waitFor(() => {
-  //       expect(screen.queryByText(/must be at least/i)).not.toBeInTheDocument();
-  //     });
-  //     await waitFor(() => {
-  //       expect(
-  //         screen.queryByText(/Invalid email address/i),
-  //       ).not.toBeInTheDocument();
-  //     });
-  //     await waitFor(() => {
-  //       expect(
-  //         screen.queryByText(/Invalid phone number/i),
-  //       ).not.toBeInTheDocument();
-  //     });
-  //   });
+    const memberNameInput = screen.getByLabelText(/Member Name/i);
+    await userEvent.type(memberNameInput, 'John Doe');
+
+    const memberEmailInput = screen.getByLabelText(/Email/i);
+    await userEvent.type(memberEmailInput, 'invalid-email'); // Invalid email format
+
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
+
+    const memberEmailError = await screen.findByText(/Invalid email address/i);
+    expect(memberEmailError).toBeInTheDocument();
+  });
+
+  it('shows error for invalid member phone', async () => {
+    render(<NewTeam />);
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
+
+    const memberNameInput = screen.getByLabelText(/Member Name/i);
+    await userEvent.type(memberNameInput, 'John Doe');
+
+    const memberEmailInput = screen.getByLabelText(/Email/i);
+    await userEvent.type(memberEmailInput, 'john.doe@example.com');
+
+    const memberPhoneInput = screen.getByLabelText(/Phone/i);
+    await userEvent.type(memberPhoneInput, '12345'); // Invalid phone format
+
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
+
+    const memberPhoneError = await screen.findByText(/Invalid phone number/i);
+    expect(memberPhoneError).toBeInTheDocument();
+  });
+
+  it('submits form with valid data', async () => {
+    render(<NewTeam />);
+    const teamNameInput = screen.getByLabelText(/Team Name/i);
+    await userEvent.type(teamNameInput, 'Valid Team');
+
+    const addButton = screen.getByRole('button', { name: /Add Another User/i });
+    await userEvent.click(addButton);
+
+    const memberNameInput = screen.getByLabelText(/Member Name/i);
+    await userEvent.type(memberNameInput, 'John Doe');
+
+    const memberEmailInput = screen.getByLabelText(/Email/i);
+    await userEvent.type(memberEmailInput, 'john.doe@example.com');
+
+    const memberPhoneInput = screen.getByLabelText(/Phone/i);
+    await userEvent.type(memberPhoneInput, '+1234567890'); // Valid phone format
+
+    const submitButton = screen.getByRole('button', { name: /Create Team/i });
+    await userEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(
+        screen.queryByText(/Team name must be at least 3 characters/i),
+      ).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(
+        screen.queryByText(/Name and Email are required/i),
+      ).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(
+        screen.queryByText(/Invalid phone number/i),
+      ).not.toBeInTheDocument();
+    });
+
+    // You can also mock a function to verify that the form was actually submitted
+    // e.g., expect(mockedSubmitFunction).toHaveBeenCalled();
+  });
 });
