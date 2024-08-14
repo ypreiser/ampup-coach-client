@@ -6,7 +6,7 @@ import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
 
 const phoneSchema = z.union([
-  z.string().regex(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number'), // Valid phone number
+  z.string().regex(/^\+?[1-9]\d{7,14}$/, 'Invalid phone number'), // Valid phone number
   z.string().length(0), // Empty string
 ]);
 
