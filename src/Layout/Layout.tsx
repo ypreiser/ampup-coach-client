@@ -10,15 +10,15 @@ import { useEffect } from 'react';
 import { apiRequest } from '../api/apiRequest';
 
 const Layout = () => {
-  // const coach = { id: '6656df1b8437151db0cce4ea' }
   const { login } = useUserStore();
 
   useEffect(() => {
     // console.log("main useEffect");
     if (localStorage.token) {
-      apiRequest({ method: 'GET', path: `/coach` })
+      apiRequest({ method: 'GET', path: `/auth/coach` })
         .then((data) => {
           login(data);
+          console.log('login: ', data);
         })
         .catch((error) => {
           console.log(error);

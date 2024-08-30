@@ -1,8 +1,23 @@
+// src\Pages\Store\StoreList\StoreList.tsx
 import StoreItem from '../StoreItem/StoreItem';
 import styles from './StoreList.module.css';
-import stores from '../../../fakeData/storesData.json';
+import { useEffect, useState } from 'react';
+import { apiRequest } from '../../../api/apiRequest';
 
 const StoreList = () => {
+  const [stores, setStores] = useState([]);
+
+  useEffect(() => {
+    apiRequest({ method: 'GET', path: `/store` })
+      .then((data) => {
+        console.log('stores: ', data);
+        setStores(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <table className={styles.table}>
       <thead className={styles.thead}>
