@@ -1,3 +1,4 @@
+// src\Pages\Challanges\ChallengesPage.tsx
 import ChallengesHeader from './ChallengesHeader/ChallangesHeader';
 import ChallengeList from './ChallengeList/ChallengeList';
 import styles from './ChallengesPage.module.css';

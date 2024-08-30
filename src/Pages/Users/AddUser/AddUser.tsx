@@ -1,7 +1,9 @@
+// src\Pages\Users\AddUser\AddUser.tsx
 import React, { useState } from 'react';
 import styles from './AddUser.module.css';
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
+// todo: use zod and test
 
 const AddUser = () => {
   const [users, setUsers] = useState([{ name: '', email: '', phone: '' }]);

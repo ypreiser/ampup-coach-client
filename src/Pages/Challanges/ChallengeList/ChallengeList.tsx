@@ -1,3 +1,4 @@
+// src\Pages\Challanges\ChallengeList\ChallengeList.tsx
 import React from 'react';
 import ChallengeItem from '../ChallengeItem/ChallengeItem';
 import styles from './ChallengeList.module.css';
