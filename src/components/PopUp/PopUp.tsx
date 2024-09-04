@@ -21,9 +21,7 @@ export default function PopUp() {
             data-testid="popup-content"
           >
             <div className={styles.top}>
-              <div>
-                <h1>{PopUp.title}</h1>
-              </div>
+              <h1>{PopUp.title}</h1>
               <div className={styles.close} onClick={() => setPopUp(null)}>
                 <XIcon fill="white" />
               </div>

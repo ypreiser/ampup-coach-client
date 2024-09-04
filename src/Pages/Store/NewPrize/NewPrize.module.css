@@ -1,7 +1,10 @@
 .form {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  padding: 20px;
 }
 
 .uploadContainer {
@@ -12,6 +15,7 @@
   padding: 20px;
   margin-bottom: 20px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .uploadLabel {
@@ -47,18 +51,19 @@
 .inputContainer input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray90);
   border-radius: 4px;
-  background-color: #333; /* Match with the popup background */
-  color: #fff; /* Match with the popup text color */
+  background-color: var(--gray30);
+  color: var(--text-color);
 }
 .small {
   display: flex;
+  margin-bottom: 5px;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: space-between;
   align-items: center;
   && .inputContainer {
-    width: 40%;
+    width: 45%;
   }
 }

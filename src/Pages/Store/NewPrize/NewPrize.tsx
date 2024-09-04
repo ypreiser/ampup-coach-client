@@ -9,7 +9,10 @@ import { usePopupStore } from '../../../store';
 // Define the schema
 const prizeSchema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters'),
-  price: z.number().positive('Price must be positive'),
+  price: z
+    .number()
+    .int('Must be an integer')
+    .min(1, 'Price must be at least 1'),
   amountPerChallenge: z
     .number()
     .int('Must be an integer')
@@ -26,13 +29,14 @@ const prizeSchema = z.object({
     .number()
     .int('Must be an integer')
     .min(0, 'Cannot be negative'),
-  linkText: z.string().url('Must be a valid URL'),
+  linkText: z.string().url('Must be a valid URL').or(z.literal('')).optional(),
+  image: z.string().optional(),
 });
 
 type PrizeSchema = z.infer<typeof prizeSchema>;
 
-interface PrizeState extends PrizeSchema {
-  image: File | null;
+interface PrizeState extends Omit<PrizeSchema, 'image'> {
+  image?: File | null | string;
 }
 
 const NewPrize: React.FC = () => {
@@ -48,8 +52,8 @@ const NewPrize: React.FC = () => {
     dayToAvailability: 0,
     personalPointToAvailability: 0,
     groupPointsToAvailability: 0,
-    linkText: '',
-    image: null,
+    linkText: undefined,
+    image: undefined,
   });
 
   const handleChange = (
@@ -88,24 +92,29 @@ const NewPrize: React.FC = () => {
     e.preventDefault();
 
     try {
-      const prizeData = { ...prize };
-      // delete prizeData.image;  // Remove image from validation
-      prizeSchema.parse(prizeData);
-      // If we get here, validation passed
-      console.log('Validated prize:', prize);
-      setPopUp(null);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
+      const rawPrizeData = { ...prize };
+      console.log('rawPrizeData', rawPrizeData);
+
+      const result = prizeSchema.safeParse(rawPrizeData);
+      if (result.success) {
+        console.log('Validated prize:', result.data);
+        setPopUp(null);
+      } else {
+        console.error('Validation failed:', result.error);
+        // Handle validation errors
         const newErrors: Partial<Record<keyof PrizeState, string>> = {};
-        error.errors.forEach((err) => {
+        result.error.errors.forEach((err) => {
           if (err.path) {
             newErrors[err.path[0] as keyof PrizeState] = err.message;
           }
         });
         setErrors(newErrors);
       }
+    } catch (error) {
+      console.error('Unexpected error:', error);
     }
   };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.uploadContainer}>
@@ -125,24 +134,105 @@ const NewPrize: React.FC = () => {
         {errors.image && <p className={styles.error}>{errors.image}</p>}
       </div>
 
-      {(Object.keys(prize) as Array<keyof PrizeState>).map(
-        (key) =>
-          key !== 'image' && (
-            <div key={key} className={styles.inputContainer}>
-              <label htmlFor={key}>
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </label>
-              <input
-                type={typeof prize[key] === 'number' ? 'number' : 'text'}
-                id={key}
-                name={key}
-                value={prize[key].toString()}
-                onChange={handleChange}
-              />
-              {errors[key] && <p className={styles.error}>{errors[key]}</p>}
-            </div>
-          ),
-      )}
+      <div className={styles.inputContainer}>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={prize.name}
+          onChange={handleChange}
+        />
+        {errors.name && <p className={styles.error}>{errors.name}</p>}
+      </div>
+
+      <div className={styles.inputContainer}>
+        <label htmlFor="price">Price</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={prize.price}
+          onChange={handleChange}
+        />
+        {errors.price && <p className={styles.error}>{errors.price}</p>}
+      </div>
+
+      <div className={styles.small}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="amountPerChallenge">Amount Per Challenge</label>
+          <input
+            type="number"
+            id="amountPerChallenge"
+            name="amountPerChallenge"
+            value={prize.amountPerChallenge}
+            onChange={handleChange}
+          />
+          {errors.amountPerChallenge && (
+            <p className={styles.error}>{errors.amountPerChallenge}</p>
+          )}
+        </div>
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="dayToAvailability">Days to Availability</label>
+          <input
+            type="number"
+            id="dayToAvailability"
+            name="dayToAvailability"
+            value={prize.dayToAvailability}
+            onChange={handleChange}
+          />
+          {errors.dayToAvailability && (
+            <p className={styles.error}>{errors.dayToAvailability}</p>
+          )}
+        </div>
+      </div>
+
+      <div className={styles.small}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="personalPointToAvailability">
+            Personal Points to Availability
+          </label>
+          <input
+            type="number"
+            id="personalPointToAvailability"
+            name="personalPointToAvailability"
+            value={prize.personalPointToAvailability}
+            onChange={handleChange}
+          />
+          {errors.personalPointToAvailability && (
+            <p className={styles.error}>{errors.personalPointToAvailability}</p>
+          )}
+        </div>
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="groupPointsToAvailability">
+            Group Points to Availability
+          </label>
+          <input
+            type="number"
+            id="groupPointsToAvailability"
+            name="groupPointsToAvailability"
+            value={prize.groupPointsToAvailability}
+            onChange={handleChange}
+          />
+          {errors.groupPointsToAvailability && (
+            <p className={styles.error}>{errors.groupPointsToAvailability}</p>
+          )}
+        </div>
+      </div>
+
+      <div className={styles.inputContainer}>
+        <label htmlFor="linkText">Link Text</label>
+        <input
+          type="text"
+          id="linkText"
+          name="linkText"
+          value={prize.linkText || ''}
+          onChange={handleChange}
+        />
+        {errors.linkText && <p className={styles.error}>{errors.linkText}</p>}
+      </div>
 
       <Button className="create" type="submit">
         Create Card

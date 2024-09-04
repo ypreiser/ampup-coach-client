@@ -6,7 +6,7 @@ interface PrizeCardProps {
   name: string;
   description: string;
   image: string;
-  coins: number;
+  price: number;
   daysToExpiry: number;
   quantity: number;
 }
@@ -15,7 +15,7 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
   name,
   daysToExpiry,
   image,
-  coins,
+  price,
   quantity,
 }) => {
   // const { name, daysToExpiry, image ,coins} = prize
@@ -31,7 +31,7 @@ const PrizeCard: React.FC<PrizeCardProps> = ({
         <span role="img" aria-label="above">
           🪙
         </span>{' '}
-        {coins}
+        {price}
       </td>
       <td>{quantity ? quantity : '♾️'}</td>
       <td>

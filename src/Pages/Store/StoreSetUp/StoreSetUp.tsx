@@ -1,14 +1,39 @@
 // src/Pages/Store/StoreSetUp.tsx
 import styles from './StoreSetUp.module.css';
 import PrizeCard from '../PrizeCard/PrizeCard';
-import storeData from '../../../fakeData/storesData.json';
+// import storeData from '../../../fakeData/storesData.json';
 import NewPrize from '../NewPrize/NewPrize';
 import { usePopupStore } from '../../../store';
+import { useEffect, useState } from 'react';
+import { apiRequest } from '../../../api/apiRequest';
+import { useParams } from 'react-router-dom';
+
+interface Store {
+  prizes?: Array<{
+    quantity: number;
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+    daysToExpiry: number;
+    _id: string;
+  }>;
+}
 
 const StoreSetUp: React.FC = () => {
-  // const storeId = location.pathname.split('/')[2]
-  const store = storeData[0];
-  const { prizes } = store;
+  const { storeId } = useParams<{ storeId: string }>();
+  const [store, setStore] = useState<Store>({});
+
+  useEffect(() => {
+    apiRequest({ method: 'GET', path: `/store/${storeId}` })
+      .then((data) => {
+        console.log('store: ', data);
+        setStore(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const { setPopUp } = usePopupStore();
 
@@ -34,14 +59,14 @@ const StoreSetUp: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {prizes.map((prize, index) => (
+          {store.prizes?.map((prize) => (
             <PrizeCard
-              key={index}
+              key={prize._id}
               quantity={prize.quantity}
               name={prize.name}
               description={prize.description}
               image={prize.image}
-              coins={prize.coins}
+              price={prize.price}
               daysToExpiry={prize.daysToExpiry}
             />
           ))}

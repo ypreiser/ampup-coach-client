@@ -14,17 +14,17 @@ vi.mock('../../../store', () => ({
 describe('NewPrize Component', () => {
   it('renders the form with all inputs', () => {
     render(<NewPrize />);
-    expect(screen.getByLabelText(/Name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Price/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/AmountPerChallenge/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/DayToAvailability/i)).toBeInTheDocument();
+    expect(screen.getByText(/Name/i)).toBeInTheDocument();
+    expect(screen.getByText(/Price/i)).toBeInTheDocument();
+    expect(screen.getByText(/Amount Per Challenge/i)).toBeInTheDocument();
+    expect(screen.getByText(/Days To Availability/i)).toBeInTheDocument();
     expect(
-      screen.getByLabelText(/PersonalPointToAvailability/i),
+      screen.getByText(/Personal Points To Availability/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByLabelText(/GroupPointsToAvailability/i),
+      screen.getByText(/Group Points To Availability/i),
     ).toBeInTheDocument();
-    expect(screen.getByLabelText(/LinkText/i)).toBeInTheDocument();
+    expect(screen.getByText(/Link Text/i)).toBeInTheDocument();
     expect(screen.getByText(/Upload File/i)).toBeInTheDocument();
   });
 
@@ -38,8 +38,8 @@ describe('NewPrize Component', () => {
   it('allows input in number fields', async () => {
     render(<NewPrize />);
     const priceInput = screen.getByLabelText(/Price/i);
-    await userEvent.type(priceInput, '99.99');
-    expect(priceInput).toHaveValue(99.99);
+    await userEvent.type(priceInput, '99');
+    expect(priceInput).toHaveValue(99);
   });
 
   it('shows error for invalid name input', async () => {
@@ -63,13 +63,13 @@ describe('NewPrize Component', () => {
     const submitButton = screen.getByRole('button', { name: /Create Card/i });
     await userEvent.click(submitButton);
     await waitFor(() => {
-      expect(screen.getByText(/Price must be positive/i)).toBeInTheDocument();
+      expect(screen.getByText(/Price must be at least 1/i)).toBeInTheDocument();
     });
   });
 
   it('shows error for invalid URL in LinkText field', async () => {
     render(<NewPrize />);
-    const linkInput = screen.getByLabelText(/LinkText/i);
+    const linkInput = screen.getByLabelText(/Link Text/i);
     await userEvent.type(linkInput, 'not-a-valid-url');
     const submitButton = screen.getByRole('button', { name: /Create Card/i });
     await userEvent.click(submitButton);
@@ -106,18 +106,18 @@ describe('NewPrize Component', () => {
     render(<NewPrize />);
     await userEvent.type(screen.getByLabelText(/Name/i), 'Valid Prize');
     await userEvent.type(screen.getByLabelText(/Price/i), '50');
-    await userEvent.type(screen.getByLabelText(/AmountPerChallenge/i), '5');
-    await userEvent.type(screen.getByLabelText(/DayToAvailability/i), '7');
+    await userEvent.type(screen.getByLabelText(/Amount Per Challenge/i), '5');
+    await userEvent.type(screen.getByLabelText(/Days To Availability/i), '7');
     await userEvent.type(
-      screen.getByLabelText(/PersonalPointToAvailability/i),
+      screen.getByLabelText(/Personal Points To Availability/i),
       '100',
     );
     await userEvent.type(
-      screen.getByLabelText(/GroupPointsToAvailability/i),
+      screen.getByLabelText(/Group Points To Availability/i),
       '500',
     );
     await userEvent.type(
-      screen.getByLabelText(/LinkText/i),
+      screen.getByLabelText(/Link Text/i),
       'https://example.com',
     );
 
